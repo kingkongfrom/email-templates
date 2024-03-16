@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+p {
+    margin: 0;
+    line-height: 1.4rem;
+}
+
+.main {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.box {
+    min-height: 700px;
+    height: 90vh;
+    border-radius: 7px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+.template-list {
+}
+
+.list-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #315375;
+    height: 70px;
+    border-radius: 4px 4px 0 0;
+}
+
+.list-header-title {
+    color: white;
+    font-size: 20px;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.list-text {
+    color: #444;
+    font-size: 22px;
+    padding-left: 10px;
+}
+
+.email-item {
+    padding: 0 30px;
+    display: flex;
+    height: 60px;
+    cursor: pointer;
+    transition: all 0.02s ease-in-out 0.02s;
+}
+
+.email-item:hover {
+    background-color: rgba(220, 221, 222, 0.42);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+
+}
+
+.number {
+    font-size: 24px;
+    font-weight: 500;
+    color: #93989d;
+    padding-right: 1rem;
+}
+
+.title {
+    margin: 2rem auto;
+    text-align: center;
+    font-size: 28px;
+    color: #315375;
+}
+.num-active {
+    color: #315375;
+}
+.emailDetails {
+    margin: 40px;
+}
+
+.input-header {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+input[type="text"] {
+    border-radius: 10px; /* Adjust border-radius as needed */
+    padding: 7px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease-in-out;
+    outline: none; /* Remove default focus outline */
+}
+
+input[type="text"]:focus {
+    border-color: #007bff; /* Change border color on focus */
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5); /* Apply custom box shadow on focus */
+}
+
+.default-text {
+    color: #9f1313;
+    font-weight: 600;
+}
+
+ul.circle {
+    list-style-type: circle;
+}
+
+li {
+    text-decoration: none;
+    line-height: 22px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.subject-title {
+    padding: 15px 10px;
+    width: 80px;
+    color: white;
+    background-color: #315375;
+    border-radius: 4px 0 0 4px;
+
+}
+
+.subject-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 48px;
+    padding: 0 20px;
+    background-color: #ced4da;
+    border-radius: 0 4px 4px 0;
+}
+
+.active {
+    background-color: #f0f0f0; /* Example background color */
+    border-left: 5px solid #3d648d; /* Example border color */
+    /* Add any other styles to distinguish the active item */
+}
+
+.url, .mailto {
+    color: #4074a8;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.temp-password {
+    font-weight: bold;
+}
+
+.copy-icon {
+    color: #545151;
+    font-size: 25px;
+}
+
+.copy-icon:hover {
+    color: #797777;
+    cursor: pointer;
+}
