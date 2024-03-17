@@ -1,0 +1,46 @@
+/* Switch.module.css */
+
+.switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.toggleInput {
+    display: none;
+}
+
+.toggleLabel {
+    width: 50px;
+    text-align: center;
+    position: relative;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+    padding: 4px 8px; /* Adjust padding for better appearance */
+    background-color: #ccc;
+    border-radius: 16px;
+    transition: background-color 0.4s;
+    border: solid 1px #fdfeff;
+}
+
+.toggleInput:checked + .toggleLabel {
+    background-color: #135c9a; /* Change background color when switch is checked */
+    color: white;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px; /* Adjust width of the slider */
+    height: 26px; /* Adjust height of the slider */
+    background-color: #fff;
+    border-radius: 14px; /* Adjust border-radius to create a rounded slider */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    transition: transform 0.4s;
+}
+
+.toggleInput:checked + .toggleLabel .slider {
+    transform: translateX(24px); /* Move slider to the right when switch is checked */
+}

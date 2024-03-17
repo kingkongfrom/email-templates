@@ -1,9 +1,25 @@
-import { Fragment } from "react";
+import React, { Fragment } from "react";
+import { FiCopy } from "react-icons/fi";
+import useCopyToClipboard from "../../hooks/useCopyToClipboard";
+import { ToastContainer } from "react-toastify";
+import { boilerplate } from "../../data/data.js";
 
-const NoActionNeeded = ({ setSubject }) => {
+const NoActionNeeded = ({ setSubject, clientName, caseNumber, capitalize }) => {
     setSubject("No user found");
+    const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
+
     return (
-        <Fragment>
+    <Fragment>
+        <div ref={jsxContentRef} className="email-body">
+            <p>Dear {clientName === "" ? "Client," : `${capitalize(clientName)},`}</p>
+            <p>{boilerplate.greeting}</p>
+            <br/>
+            {caseNumber &&
+                <Fragment>
+                    <p>{boilerplate.tracking}<span className="bold">{caseNumber.toUpperCase()}</span>.</p>
+                    <br/>
+                </Fragment>
+            }
             <p>We ran a search in our system to find a user ID associated to information provided, unfortunately,
                 we were unable to find a match.
             </p>
@@ -11,7 +27,14 @@ const NoActionNeeded = ({ setSubject }) => {
             <p>Can you please provide us more details such as company name, Subscriber Code, or user ID of a
                 coworker with access to Experian, with that information we would be able to find your user ID.
             </p>
-        </Fragment>
-    );
+            <br/>
+            <p>{boilerplate.closing}</p>
+        </div>
+
+        <FiCopy className="copy-icon-body" onClick={copyToClipboard}/>
+        <ToastContainer/>
+    </Fragment>
+
+);
 };
 export default NoActionNeeded;

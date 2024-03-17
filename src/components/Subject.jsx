@@ -1,4 +1,3 @@
-import React from 'react';
 import { FiCopy } from "react-icons/fi";
 import { toast, ToastContainer, Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -19,8 +18,6 @@ const Subject = ({ caseNumber, subject }) => {
                     transition: Flip,
                     theme: "colored",
                     style: { background: "#315375", color: "#fff" }
-
-
                 });
             }).catch((error) => {
             console.error('Error copying to clipboard: ', error);

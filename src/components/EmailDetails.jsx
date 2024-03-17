@@ -1,7 +1,6 @@
-import { boilerplate } from "../data/data.js";
-import { useState, useEffect, Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import PasswordReset from "./emails/PasswordReset.jsx";
-import Subject from "./Subject.jsx";
+import Subject from "./Subject.jsx"; // Assuming setSubject is defined here
 import NoActionNeeded from "./emails/NoActionNeeded.jsx";
 import AccountUnlock from "./emails/AccountUnlock.jsx";
 import TempPassword from "./emails/TempPassword.jsx";
@@ -10,6 +9,15 @@ import InquirySuppression from "./emails/InquirySuppression.jsx";
 import OktaUrl from "./emails/OktaUrl.jsx";
 import OriginUrl from "./emails/OriginUrl.jsx";
 import BIQEnvSetup from "./emails/BIQEnvSetup.jsx";
+
+
+function capitalize(str) {
+    // Check if the input string is empty or null
+    if (!str) return str;
+
+    // Capitalize the first letter and concatenate the rest of the string
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
 const EmailDetails = ({ selectedEmail }) => {
     const [clientName, setClientName] = useState("");
@@ -26,6 +34,7 @@ const EmailDetails = ({ selectedEmail }) => {
         setSubject("");
         setHsd("");
         setUserId("");
+        setTempPassword("");
     }, [selectedEmail]);
 
     const handleInputChange = (event) => {
@@ -99,36 +108,37 @@ const EmailDetails = ({ selectedEmail }) => {
                                         placeholder="User ID"
                                     />
                                 </Fragment>
-
-
                             }
                         </div>
                         <Subject caseNumber={caseNumber} selectedEmail={selectedEmail} subject={subject}/>
 
-                        <br/>
-                        <p>Dear {clientName === "" ? "Client," : `${clientName},`}</p>
-                        <p>{boilerplate.greeting}</p>
-                        {caseNumber &&
-                            <Fragment>
-                                <br/>
-                                <p>{boilerplate.tracking} {caseNumber}.</p>
-                            </Fragment>
-                        }
-                        <br/>
-                        {selectedEmail.name === "Password reset" && <PasswordReset setSubject={setSubject}/>}
-                        {selectedEmail.name === "No action needed" && <NoActionNeeded setSubject={setSubject}/>}
-                        {selectedEmail.name === "Account locked" && <AccountUnlock setSubject={setSubject}/>}
+                        {selectedEmail.name === "Password reset" &&
+                            <PasswordReset setSubject={setSubject} clientName={clientName} caseNumber={caseNumber}
+                                           capitalize={capitalize}/>}
+                        {selectedEmail.name === "No action needed" &&
+                            <NoActionNeeded setSubject={setSubject} clientName={clientName} caseNumber={caseNumber}
+                                            capitalize={capitalize}/>}
+                        {selectedEmail.name === "Account locked" &&
+                            <AccountUnlock setSubject={setSubject} clientName={clientName} caseNumber={caseNumber}
+                                           capitalize={capitalize}/>}
                         {selectedEmail.name === "Temporary password" &&
-                            <TempPassword tempPassword={tempPassword} setSubject={setSubject}/>}
-                        {selectedEmail.name === "HSD creation" && <HsdCreation setSubject={setSubject}/>}
+                            <TempPassword tempPassword={tempPassword} setSubject={setSubject} clientName={clientName}
+                                          caseNumber={caseNumber} capitalize={capitalize}/>}
+                        {selectedEmail.name === "HSD creation" &&
+                            <HsdCreation setSubject={setSubject} clientName={clientName} caseNumber={caseNumber}
+                                         capitalize={caseNumber}/>}
                         {selectedEmail.name === "Inquiry suppression request" &&
-                            <InquirySuppression setSubject={setSubject}/>}
-                        {selectedEmail.name === "OKTA URL" && <OktaUrl setSubject={setSubject}/>}
-                        {selectedEmail.name === "Origin URL" && <OriginUrl setSubject={setSubject}/>}
+                            <InquirySuppression setSubject={setSubject} clientName={clientName} caseNumber={caseNumber}
+                                                capitalize={capitalize}/>}
+                        {selectedEmail.name === "OKTA URL" &&
+                            <OktaUrl setSubject={setSubject} clientName={clientName} caseNumber={caseNumber}
+                                     capitalize={capitalize}/>}
+                        {selectedEmail.name === "Origin URL" &&
+                            <OriginUrl setSubject={setSubject} clientName={clientName} caseNumber={caseNumber}
+                                       capitalize={capitalize}/>}
                         {selectedEmail.name === "BIQ env setup" &&
-                            <BIQEnvSetup setSubject={setSubject} hsd={hsd} clientName={clientName} userId={userId}/>}
-                        <br/>
-                        <p>{boilerplate.closing}</p>
+                            <BIQEnvSetup setSubject={setSubject} hsd={hsd} caseNumber={caseNumber}
+                                         clientName={clientName} userId={userId} capitalize={capitalize}/>}
                     </div>
                 </div>
             )}

@@ -2,7 +2,7 @@ export const boilerplate = {
     greeting: "Thanks for reaching out our Technical Support Center.",
     tracking: "For Tracking and documentation we have initiated the ticket ",
     closing: "If further assistance is required please contact us at 1-800-854-7201 opt 3."
-}
+};
 
 export const emails = [
     {
@@ -15,8 +15,19 @@ export const emails = [
             "Inquiry suppression request",
             "OKTA URL",
             "Origin URL",
-            "BIQ env setup"
+            "BIQ env setup",
         ]
     }
-]
+];
+
+export const coe = [
+    {
+        name: [
+            "Case A",
+            "Case B",
+            "Case C",
+            "Case D",
+        ]
+    }
+];
 
