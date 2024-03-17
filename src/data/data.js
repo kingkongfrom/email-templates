@@ -26,7 +26,6 @@ export const coe = [
             "Case A",
             "Case B",
             "Case C",
-            "Case D",
         ]
     }
 ];

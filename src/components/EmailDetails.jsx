@@ -9,7 +9,9 @@ import InquirySuppression from "./emails/InquirySuppression.jsx";
 import OktaUrl from "./emails/OktaUrl.jsx";
 import OriginUrl from "./emails/OriginUrl.jsx";
 import BIQEnvSetup from "./emails/BIQEnvSetup.jsx";
-
+import CaseA from "./coe/CaseA.jsx";
+import CaseB from "./coe/CaseB.jsx";
+import CaseC from "./coe/CaseC.jsx";
 
 function capitalize(str) {
     // Check if the input string is empty or null
@@ -139,6 +141,17 @@ const EmailDetails = ({ selectedEmail }) => {
                         {selectedEmail.name === "BIQ env setup" &&
                             <BIQEnvSetup setSubject={setSubject} hsd={hsd} caseNumber={caseNumber}
                                          clientName={clientName} userId={userId} capitalize={capitalize}/>}
+
+                        {selectedEmail.name === "Case A" &&
+                            <CaseA setSubject={setSubject} caseNumber={caseNumber}
+                                         clientName={clientName} userId={userId} capitalize={capitalize}/>}
+                        {selectedEmail.name === "Case B" &&
+                            <CaseB setSubject={setSubject} caseNumber={caseNumber}
+                                   clientName={clientName} userId={userId} capitalize={capitalize}/>}
+                        {selectedEmail.name === "Case C" &&
+                            <CaseC setSubject={setSubject} caseNumber={caseNumber}
+                                   clientName={clientName} userId={userId} capitalize={capitalize}/>}
+
                     </div>
                 </div>
             )}
