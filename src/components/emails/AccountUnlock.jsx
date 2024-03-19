@@ -5,8 +5,8 @@ import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 
 const AccountUnlock = ({ setSubject, clientName, caseNumber, capitalize }) => {
-    setSubject("Account locked");
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
+    setSubject("Account locked");
 
     return (
         <Fragment>
@@ -20,7 +20,8 @@ const AccountUnlock = ({ setSubject, clientName, caseNumber, capitalize }) => {
                         <br/>
                     </Fragment>
                 }
-                <p>As requested your account has been unlocked, please try login to your account using your current password.</p>
+                <p>As requested your account has been unlocked, please try login to your account using your current
+                    password.</p>
                 <br/>
                 <p>{boilerplate.closing}</p>
             </div>

@@ -2,13 +2,13 @@ import { Fragment } from "react";
 import { FiCopy } from "react-icons/fi";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard.js";
 import { ToastContainer } from "react-toastify";
-import {boilerplate} from "../../data/data"
+import { boilerplate } from "../../data/data";
 
 const TempPassword = ({ setSubject, tempPassword, clientName, caseNumber, capitalize }) => {
-    setSubject("[encrypt] | Temporary Password reset");
     const resetUrl = "https://experian-nab.okta.com";
-
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
+    setSubject("[encrypt] | Temporary Password reset");
+
 
     return (
         <Fragment>
@@ -19,7 +19,8 @@ const TempPassword = ({ setSubject, tempPassword, clientName, caseNumber, capita
                     <p>{boilerplate.tracking}<span className="bold">{caseNumber.toUpperCase()}</span>.</p>
                 }
                 <br/>
-                <p>A new temporary password was created, please use the following URL and temporary password in order to gain
+                <p>A new temporary password was created, please use the following URL and temporary password in order to
+                    gain
                     access to your account.</p>
                 <br/>
                 <p>Password reset URL: <a href={resetUrl} className="url">{resetUrl}</a></p>

@@ -5,6 +5,11 @@ import ListHeader from "./ListHeader.jsx";
 
 const TemplateList = ({ selectedEmail, setSelectedEmail }) => {
     const [isChecked, setIsChecked] = useState(false);
+    const [selectedOption, setSelectedOption] = useState("COE"); // Initial selected option
+
+    const handleOptionChange = (option) => {
+        setSelectedOption(option);
+    };
 
     // Flatten the emails array and sort alphabetically by name
     const sortedEmails = emails
@@ -21,15 +26,14 @@ const TemplateList = ({ selectedEmail, setSelectedEmail }) => {
 
     return (
         <Fragment>
-            <ListHeader isChecked={isChecked} setIsChecked={setIsChecked}/>
+            <ListHeader isChecked={isChecked} setIsChecked={setIsChecked} selectedOption={selectedOption} onSelectedOption={handleOptionChange}/>
             {isChecked ?
-
                 sortedCoe.map((name, index) => (
                     <div className={selectedEmail.name === name ? "active" : ""} key={index}
                          onClick={() => handleEmailItemClick(index + 1, name)}>
                         <EmailItem>
                             <div className="container">
-                                <p className={`list-text ${selectedEmail.name === name ? "num-active" : "number"}`}>0{index + 1}
+                                <p className={`list-text ${selectedEmail.name === name ? "num-active" : "number"}`}>{index < 9 ? `0${index + 1}` : index + 1}
                                     <span>{name}</span></p>
                             </div>
                         </EmailItem>
@@ -41,7 +45,7 @@ const TemplateList = ({ selectedEmail, setSelectedEmail }) => {
                          onClick={() => handleEmailItemClick(index + 1, name)}>
                         <EmailItem>
                             <div className="container">
-                                <p className={`list-text ${selectedEmail.name === name ? "num-active" : "number"}`}>0{index + 1}
+                                <p className={`list-text ${selectedEmail.name === name ? "num-active" : "number"}`}>{index < 9 ? `0${index + 1}` : index + 1}
                                     <span>{name}</span></p>
                             </div>
                         </EmailItem>

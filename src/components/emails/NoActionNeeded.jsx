@@ -1,12 +1,12 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import { FiCopy } from "react-icons/fi";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 
 const NoActionNeeded = ({ setSubject, clientName, caseNumber, capitalize }) => {
-    setSubject("No user found");
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
+        setSubject("No user found");
 
     return (
     <Fragment>

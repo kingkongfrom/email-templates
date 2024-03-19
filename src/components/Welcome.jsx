@@ -3,7 +3,7 @@ const Welcome = () => {
     return (
         <div style={styles.container}>
             <h1 style={styles.heading}>TSC | COE</h1>
-            <p style={styles.text}>Select a template from the left pane to get started.</p>
+            <p style={styles.text}>Select a template from the left panel to get started.</p>
             <FiCodesandbox style={styles.icon}/>
 
         </div>

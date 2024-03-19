@@ -1,14 +1,13 @@
 import { Fragment } from "react";
+import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 import { FiCopy } from "react-icons/fi";
-import useCopyToClipboard from "../../hooks/useCopyToClipboard.js";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 
-const OriginUrl = ({ setSubject, clientName, caseNumber, capitalize }) => {
-    const URL = "https://origin-na.experian.com";
+const UATApiRequest = ({ setSubject, caseNumber, clientName, capitalize }) => {
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
-    setSubject("Experian Origin URL");
-
+    const URL = "https://www.experian.com/consumer-information/net-connect-toolkit-form";
+    setSubject("UAT API account request");
 
     return (
         <Fragment>
@@ -22,7 +21,13 @@ const OriginUrl = ({ setSubject, clientName, caseNumber, capitalize }) => {
                         <br/>
                     </Fragment>
                 }
-                <p>Please use the following URL in order to access your administration portal</p>
+                <p>In order to obtain an API UAT account please follow the URL below to the request form.</p>
+                <p>Once all required information is completed click on the submit button to initiate the enrolment
+                    process.</p>
+                <br/>
+                <p>Please note that for a API UAT account the field Test User ID Only must be checked.</p>
+                <br/>
+                <p>Click on the following URL to initiate the enrolment process.</p>
                 <p><a href={URL} className="url">{URL}</a></p>
                 <br/>
                 <p>{boilerplate.closing}</p>
@@ -31,7 +36,6 @@ const OriginUrl = ({ setSubject, clientName, caseNumber, capitalize }) => {
             <FiCopy className="copy-icon-body" onClick={copyToClipboard}/>
             <ToastContainer/>
         </Fragment>
-
     );
 };
-export default OriginUrl;
+export default UATApiRequest;

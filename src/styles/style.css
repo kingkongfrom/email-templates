@@ -5,6 +5,11 @@ body {
     font-family: Arial, sans-serif;
 }
 
+h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0;
+}
+
 p {
     margin: 0;
     line-height: 1.4rem;
@@ -203,7 +208,8 @@ li {
     color: #838586;
 }
 
-.experian-logo {
-    margin: 30px;
-    width: 200px;
+
+
+td {
+    min-width: 300px;
 }

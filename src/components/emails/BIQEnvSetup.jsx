@@ -5,10 +5,9 @@ import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 
 const BiqEnvSetup = ({ setSubject, caseNumber, hsd, clientName, userId, capitalize }) => {
-    setSubject("Business IQ environment setup");
     const URL = "https://origin-na.experian.com";
-
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
+    setSubject("Business IQ environment setup");
 
     return (
         <Fragment>

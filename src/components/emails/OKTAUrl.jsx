@@ -4,11 +4,10 @@ import useCopyToClipboard from "../../hooks/useCopyToClipboard.js";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 
-const OriginUrl = ({ setSubject, clientName, caseNumber, capitalize }) => {
-    const URL = "https://origin-na.experian.com";
+const OKTAUrl = ({ setSubject, clientName, caseNumber, capitalize }) => {
+    const URL = "https://experian-nab.okta.com";
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
-    setSubject("Experian Origin URL");
-
+    setSubject("Experian Okta profile URL");
 
     return (
         <Fragment>
@@ -22,7 +21,7 @@ const OriginUrl = ({ setSubject, clientName, caseNumber, capitalize }) => {
                         <br/>
                     </Fragment>
                 }
-                <p>Please use the following URL in order to access your administration portal</p>
+                <p>Please use the following URL to access your Experian OKTA profile.</p>
                 <p><a href={URL} className="url">{URL}</a></p>
                 <br/>
                 <p>{boilerplate.closing}</p>
@@ -34,4 +33,4 @@ const OriginUrl = ({ setSubject, clientName, caseNumber, capitalize }) => {
 
     );
 };
-export default OriginUrl;
+export default OKTAUrl;

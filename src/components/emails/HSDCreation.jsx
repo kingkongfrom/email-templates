@@ -5,10 +5,10 @@ import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 
 const HsdCreation = ({ setSubject, clientName, caseNumber, capitalize }) => {
-    setSubject("Head Security Designate form");
     const eSupport = "esupport@experian.com";
-
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
+    setSubject("Head Security Designate form");
+
 
     return (
         <Fragment>

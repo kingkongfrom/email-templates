@@ -1,12 +1,13 @@
-import React, { Fragment } from "react";
+import { Fragment} from "react";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 import { FiCopy } from "react-icons/fi";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 
 const PasswordReset = ({ setSubject, clientName, caseNumber, capitalize }) => {
-    setSubject("Password reset");
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
+    setSubject("Password reset");
+
 
     return (
         <Fragment>

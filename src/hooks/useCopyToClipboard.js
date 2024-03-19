@@ -9,7 +9,7 @@ const useCopyToClipboard = () => {
         if (jsxContentRef.current) {
             const jsxContent = Array.from(jsxContentRef.current.childNodes)
                 .map(node => {
-                    if (node.nodeName === 'P') {
+                    if (node.nodeName === 'P' || /^H[1-6]$/.test(node.nodeName)) {
                         return `${node.textContent}\n`;
                     } else if (node.nodeName === 'BR') {
                         return '\n';

@@ -6,12 +6,14 @@ import AccountUnlock from "./emails/AccountUnlock.jsx";
 import TempPassword from "./emails/TempPassword.jsx";
 import HsdCreation from "./emails/HSDCreation.jsx";
 import InquirySuppression from "./emails/InquirySuppression.jsx";
-import OktaUrl from "./emails/OktaUrl.jsx";
+import OKTAUrl from "./emails/OKTAUrl.jsx";
 import OriginUrl from "./emails/OriginUrl.jsx";
 import BIQEnvSetup from "./emails/BIQEnvSetup.jsx";
 import CaseA from "./coe/CaseA.jsx";
 import CaseB from "./coe/CaseB.jsx";
 import CaseC from "./coe/CaseC.jsx";
+import UATApiRequest from "./emails/UATApiRequest.jsx";
+import SSHKeyRequirements from "./emails/SSHKeyRequirements.jsx";
 
 function capitalize(str) {
     // Check if the input string is empty or null
@@ -128,12 +130,12 @@ const EmailDetails = ({ selectedEmail }) => {
                                           caseNumber={caseNumber} capitalize={capitalize}/>}
                         {selectedEmail.name === "HSD creation" &&
                             <HsdCreation setSubject={setSubject} clientName={clientName} caseNumber={caseNumber}
-                                         capitalize={caseNumber}/>}
+                                         capitalize={capitalize}/>}
                         {selectedEmail.name === "Inquiry suppression request" &&
                             <InquirySuppression setSubject={setSubject} clientName={clientName} caseNumber={caseNumber}
                                                 capitalize={capitalize}/>}
                         {selectedEmail.name === "OKTA URL" &&
-                            <OktaUrl setSubject={setSubject} clientName={clientName} caseNumber={caseNumber}
+                            <OKTAUrl setSubject={setSubject} clientName={clientName} caseNumber={caseNumber}
                                      capitalize={capitalize}/>}
                         {selectedEmail.name === "Origin URL" &&
                             <OriginUrl setSubject={setSubject} clientName={clientName} caseNumber={caseNumber}
@@ -141,6 +143,13 @@ const EmailDetails = ({ selectedEmail }) => {
                         {selectedEmail.name === "BIQ env setup" &&
                             <BIQEnvSetup setSubject={setSubject} hsd={hsd} caseNumber={caseNumber}
                                          clientName={clientName} userId={userId} capitalize={capitalize}/>}
+                        {selectedEmail.name === "UAT API account request" &&
+                            <UATApiRequest setSubject={setSubject} hsd={hsd} caseNumber={caseNumber}
+                                           clientName={clientName} userId={userId} capitalize={capitalize}/>}
+                        {selectedEmail.name === "SSH Key requirements" &&
+                            <SSHKeyRequirements setSubject={setSubject} hsd={hsd} caseNumber={caseNumber}
+                                                clientName={clientName} userId={userId} capitalize={capitalize}/>}
+                        {/* --------------------------------------------------------------------------------------- */}
 
                         {selectedEmail.name === "Case A" &&
                             <CaseA setSubject={setSubject} caseNumber={caseNumber}
@@ -151,7 +160,6 @@ const EmailDetails = ({ selectedEmail }) => {
                         {selectedEmail.name === "Case C" &&
                             <CaseC setSubject={setSubject} caseNumber={caseNumber}
                                    clientName={clientName} userId={userId} capitalize={capitalize}/>}
-
                     </div>
                 </div>
             )}
