@@ -1,9 +1,9 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { emails, coe } from "../data/data";
 import EmailItem from "./EmailItem.jsx";
 import ListHeader from "./ListHeader.jsx";
 
-const TemplateList = ({ selectedEmail, setSelectedEmail }) => {
+const EmailList = ({ selectedEmail, setSelectedEmail }) => {
     const [isChecked, setIsChecked] = useState(false);
     const [selectedOption, setSelectedOption] = useState("COE"); // Initial selected option
 
@@ -26,7 +26,8 @@ const TemplateList = ({ selectedEmail, setSelectedEmail }) => {
 
     return (
         <Fragment>
-            <ListHeader isChecked={isChecked} setIsChecked={setIsChecked} selectedOption={selectedOption} onSelectedOption={handleOptionChange}/>
+            <ListHeader isChecked={isChecked} setIsChecked={setIsChecked} selectedOption={selectedOption}
+                        onSelectedOption={handleOptionChange}/>
             {isChecked ?
                 sortedCoe.map((name, index) => (
                     <div className={selectedEmail.name === name ? "active" : ""} key={index}
@@ -56,4 +57,4 @@ const TemplateList = ({ selectedEmail, setSelectedEmail }) => {
     );
 };
 
-export default TemplateList;
+export default EmailList;

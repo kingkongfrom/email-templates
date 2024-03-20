@@ -219,9 +219,10 @@ li {
     background-color: transparent;
     padding-top: 5px;
     border: none;
-    font-weight: bold;
+    transition: transform 0.3s ease;
 }
 
 .btn-reset:hover {
+    transform: scale(1.1);
     font-size: 18px;
 }
