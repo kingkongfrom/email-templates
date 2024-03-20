@@ -17,7 +17,7 @@ const BiqEnvSetup = ({ setSubject, caseNumber, hsd, clientName, userId, capitali
                 <br/>
                 {caseNumber &&
                     <Fragment>
-                        <p>{boilerplate.tracking}<span className="bold">{caseNumber.toUpperCase()}</span>.</p>
+                        <p className="tracking">{boilerplate.tracking}<span className="bold">{caseNumber.toUpperCase()}</span>.</p>
                         <br/>
                     </Fragment>
                 }

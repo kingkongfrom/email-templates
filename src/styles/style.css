@@ -226,3 +226,20 @@ li {
     transform: scale(1.1);
     font-size: 18px;
 }
+
+.tracking {
+    opacity: 0; /* Start with text hidden */
+    animation: fadeIn 0.2s ease forwards; /* Apply animation */
+    animation-delay: 0.2s; /* Delay the animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Text is initially hidden */
+        color: #26b429;
+    }
+    to {
+        opacity: 1; /* Text fades in */
+        color: #000;
+    }
+}
