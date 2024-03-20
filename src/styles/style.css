@@ -33,7 +33,7 @@ p {
 
 .template-list {
 
-  }
+}
 
 .list-header {
     display: flex;
@@ -44,8 +44,13 @@ p {
     height: 70px;
     border-radius: 4px 4px 0 0;
 }
-.left {width: 80%}
-.right {}
+
+.left {
+    width: 80%
+}
+
+.right {
+}
 
 .list-header-title {
     color: white;
@@ -93,9 +98,11 @@ p {
     color: #315375;
 
 }
+
 .num-active {
     color: #315375;
 }
+
 .emailDetails {
     margin: 40px;
 }
@@ -114,7 +121,7 @@ input[type="text"] {
     border: 1px solid #ccc;
     transition: border-color 0.3s ease-in-out;
     outline: none; /* Remove default focus outline */
-    width: 125px;
+    width: 115px;
 }
 
 input[type="text"]:focus {
@@ -187,11 +194,8 @@ li {
     cursor: pointer;
 }
 
-
-/*--------------------------- */
-
 .email-body {
-   padding-top: 30px;
+    padding-top: 30px;
 }
 
 .copy-icon-body {
@@ -208,8 +212,16 @@ li {
     color: #838586;
 }
 
+.btn-reset {
+    font-size: 17px;
+    cursor: pointer;
+    color: #315375;
+    background-color: transparent;
+    padding-top: 5px;
+    border: none;
+    font-weight: bold;
+}
 
-
-td {
-    min-width: 300px;
+.btn-reset:hover {
+    font-size: 18px;
 }

@@ -14,6 +14,7 @@ import CaseB from "./coe/CaseB.jsx";
 import CaseC from "./coe/CaseC.jsx";
 import UATApiRequest from "./emails/UATApiRequest.jsx";
 import SSHKeyRequirements from "./emails/SSHKeyRequirements.jsx";
+import { FaUndo } from "react-icons/fa";
 
 function capitalize(str) {
     // Check if the input string is empty or null
@@ -30,6 +31,15 @@ const EmailDetails = ({ selectedEmail }) => {
     const [tempPassword, setTempPassword] = useState("");
     const [hsd, setHsd] = useState("");
     const [userId, setUserId] = useState("");
+
+    const resetInput = () => {
+        setClientName("");
+        setCaseNumber("");
+        setSubject("");
+        setHsd("");
+        setUserId("");
+        setTempPassword("");
+    }
 
     // Reset clientName and caseNumber when selectedEmail changes
     useEffect(() => {
@@ -113,6 +123,7 @@ const EmailDetails = ({ selectedEmail }) => {
                                     />
                                 </Fragment>
                             }
+                            <button className="btn-reset" onClick={resetInput}><FaUndo /></button>
                         </div>
                         <Subject caseNumber={caseNumber} selectedEmail={selectedEmail} subject={subject}/>
 
