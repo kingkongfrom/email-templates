@@ -17,7 +17,8 @@ export const emails = [
             "Origin URL",
             "BIQ env setup",
             "UAT API account request",
-            "SSH Key requirements"
+            "SSH Key requirements",
+            "API Info Required",
         ]
     }
 ];

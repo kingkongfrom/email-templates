@@ -15,8 +15,9 @@ const TempPassword = ({ setSubject, tempPassword, clientName, caseNumber, capita
             <div ref={jsxContentRef} className="email-body">
                 <p>Dear {clientName === "" ? "Client," : `${capitalize(clientName)},`}</p>
                 <p>{boilerplate.greeting}</p>
+                <br/>
                 {caseNumber &&
-                    <p>{boilerplate.tracking}<span className="bold">{caseNumber.toUpperCase()}</span>.</p>
+                    <p className="tracking">{boilerplate.tracking}<span className="bold">{caseNumber.toUpperCase()}</span>.</p>
                 }
                 <br/>
                 <p>A new temporary password was created, please use the following URL and temporary password in order to

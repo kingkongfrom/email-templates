@@ -18,7 +18,7 @@ const OriginUrl = ({ setSubject, clientName, caseNumber, capitalize }) => {
                 <br/>
                 {caseNumber &&
                     <Fragment>
-                        <p>{boilerplate.tracking}<span className="bold">{caseNumber.toUpperCase()}</span>.</p>
+                        <p className="tracking">{boilerplate.tracking}<span className="bold">{caseNumber.toUpperCase()}</span>.</p>
                         <br/>
                     </Fragment>
                 }

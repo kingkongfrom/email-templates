@@ -19,7 +19,7 @@ const InquirySuppression = ({ setSubject, clientName, caseNumber, capitalize }) 
 
                 {caseNumber &&
                     <Fragment>
-                        <p>{boilerplate.tracking}<span className="bold">{caseNumber.toUpperCase()}</span>.</p>
+                        <p className="tracking">{boilerplate.tracking}<span className="bold">{caseNumber.toUpperCase()}</span>.</p>
                         <br/>
                     </Fragment>
                 }

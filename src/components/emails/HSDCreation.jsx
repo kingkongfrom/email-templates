@@ -1,8 +1,9 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { FiCopy } from "react-icons/fi";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
+import subject from "../Subject.jsx";
 
 const HsdCreation = ({ setSubject, clientName, caseNumber, capitalize }) => {
     const eSupport = "esupport@experian.com";
@@ -18,7 +19,7 @@ const HsdCreation = ({ setSubject, clientName, caseNumber, capitalize }) => {
                 <br/>
                 {caseNumber &&
                     <Fragment>
-                        <p>{boilerplate.tracking}<span className="bold">{caseNumber.toUpperCase()}</span>.</p>
+                        <p className="tracking">{boilerplate.tracking}<span className="bold">{caseNumber.toUpperCase()}</span>.</p>
                         <br/>
                     </Fragment>
                 }

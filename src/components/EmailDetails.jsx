@@ -15,6 +15,7 @@ import CaseC from "./coe/CaseC.jsx";
 import UATApiRequest from "./emails/UATApiRequest.jsx";
 import SSHKeyRequirements from "./emails/SSHKeyRequirements.jsx";
 import { FaUndo } from "react-icons/fa";
+import APIInfoRequired from "./emails/APIInforequest.jsx";
 
 function capitalize(str) {
     // Check if the input string is empty or null
@@ -39,16 +40,11 @@ const EmailDetails = ({ selectedEmail }) => {
         setHsd("");
         setUserId("");
         setTempPassword("");
-    }
+    };
 
     // Reset clientName and caseNumber when selectedEmail changes
     useEffect(() => {
-        setClientName("");
-        setCaseNumber("");
-        setSubject("");
-        setHsd("");
-        setUserId("");
-        setTempPassword("");
+        resetInput();
     }, [selectedEmail]);
 
     const handleInputChange = (event) => {
@@ -123,7 +119,7 @@ const EmailDetails = ({ selectedEmail }) => {
                                     />
                                 </Fragment>
                             }
-                            <button className="btn-reset" onClick={resetInput}><FaUndo /></button>
+                            <button className="btn-reset" onClick={resetInput}><FaUndo/></button>
                         </div>
                         <Subject caseNumber={caseNumber} selectedEmail={selectedEmail} subject={subject}/>
 
@@ -140,7 +136,8 @@ const EmailDetails = ({ selectedEmail }) => {
                             <TempPassword tempPassword={tempPassword} setSubject={setSubject} clientName={clientName}
                                           caseNumber={caseNumber} capitalize={capitalize}/>}
                         {selectedEmail.name === "HSD creation" &&
-                            <HsdCreation setSubject={setSubject} clientName={clientName} caseNumber={caseNumber}
+                            <HsdCreation selectedEmail={selectedEmail} setSubject={setSubject} clientName={clientName}
+                                         caseNumber={caseNumber}
                                          capitalize={capitalize}/>}
                         {selectedEmail.name === "Inquiry suppression request" &&
                             <InquirySuppression setSubject={setSubject} clientName={clientName} caseNumber={caseNumber}
@@ -160,20 +157,25 @@ const EmailDetails = ({ selectedEmail }) => {
                         {selectedEmail.name === "SSH Key requirements" &&
                             <SSHKeyRequirements setSubject={setSubject} hsd={hsd} caseNumber={caseNumber}
                                                 clientName={clientName} userId={userId} capitalize={capitalize}/>}
+                        {selectedEmail.name === "API Info Required" &&
+                            <APIInfoRequired setSubject={setSubject} hsd={hsd} caseNumber={caseNumber}
+                                             clientName={clientName} userId={userId} capitalize={capitalize} />}
+
                         {/* --------------------------------------------------------------------------------------- */}
 
                         {selectedEmail.name === "Case A" &&
                             <CaseA setSubject={setSubject} caseNumber={caseNumber}
-                                         clientName={clientName} userId={userId} capitalize={capitalize}/>}
-                        {selectedEmail.name === "Case B" &&
-                            <CaseB setSubject={setSubject} caseNumber={caseNumber}
-                                   clientName={clientName} userId={userId} capitalize={capitalize}/>}
-                        {selectedEmail.name === "Case C" &&
-                            <CaseC setSubject={setSubject} caseNumber={caseNumber}
-                                   clientName={clientName} userId={userId} capitalize={capitalize}/>}
-                    </div>
+                         clientName={clientName} userId={userId} capitalize={capitalize}/>
+                    }
+                    {selectedEmail.name === "Case B" &&
+                    <CaseB setSubject={setSubject} caseNumber={caseNumber}
+                           clientName={clientName} userId={userId} capitalize={capitalize}/>}
+                    {selectedEmail.name === "Case C" &&
+                    <CaseC setSubject={setSubject} caseNumber={caseNumber}
+                           clientName={clientName} userId={userId} capitalize={capitalize}/>}
                 </div>
-            )}
+                </div>
+                )}
         </div>
     );
 };

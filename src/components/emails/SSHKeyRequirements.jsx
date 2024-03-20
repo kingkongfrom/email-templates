@@ -15,10 +15,11 @@ const SSHKeyRequirements = ({ setSubject, caseNumber, clientName, capitalize }) 
             <div ref={jsxContentRef} className="email-body">
                 <p>Dear {clientName === "" ? "Client," : `${capitalize(clientName)},`}</p>
                 <p>{boilerplate.greeting}</p>
-
+                <br/>
                 {caseNumber &&
                     <Fragment>
-                        <p>{boilerplate.tracking}<span className="bold">{caseNumber.toUpperCase()}</span>.</p>
+                        <p className="tracking">{boilerplate.tracking}<span
+                            className="bold">{caseNumber.toUpperCase()}</span>.</p>
                         <br/>
                     </Fragment>
                 }
