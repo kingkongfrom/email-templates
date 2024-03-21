@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useState } from "react";
 import { emails, coe } from "../data/data";
 import EmailItem from "./EmailItem.jsx";
 import ListHeader from "./ListHeader.jsx";

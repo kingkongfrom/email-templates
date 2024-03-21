@@ -9,14 +9,6 @@ import Welcome from "./components/Welcome.jsx";
 function App() {
     const [selectedEmail, setSelectedEmail] = useState({ subject: null, id: null, name: null });
 
-    useEffect(() => {
-        document.addEventListener("keydown", (e) => {
-            if (e.code === "Escape") {
-                setSelectedEmail({ subject: null, id: null, name: null })
-            }
-        });
-    }, []);
-
     return (
         <Fragment>
             <Main>
@@ -25,7 +17,7 @@ function App() {
                 </Box>
                 <Box width={700}>
                     {selectedEmail.id === null && <Welcome />}
-                    {selectedEmail.id && <EmailDetails selectedEmail={selectedEmail} />}
+                    {selectedEmail.id && <EmailDetails selectedEmail={selectedEmail} setSelectedEmail={setSelectedEmail} />}
                 </Box>
             </Main>
         </Fragment>

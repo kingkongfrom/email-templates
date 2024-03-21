@@ -1,28 +1,33 @@
 import { Fragment, useEffect, useState } from "react";
-import PasswordReset from "./emails/PasswordReset.jsx";
-import Subject from "./Subject.jsx"; // Assuming setSubject is defined here
-import NoActionNeeded from "./emails/NoActionNeeded.jsx";
-import AccountUnlock from "./emails/AccountUnlock.jsx";
-import TempPassword from "./emails/TempPassword.jsx";
-import HsdCreation from "./emails/HSDCreation.jsx";
-import InquirySuppression from "./emails/InquirySuppression.jsx";
-import OKTAUrl from "./emails/OKTAUrl.jsx";
-import OriginUrl from "./emails/OriginUrl.jsx";
-import BIQEnvSetup from "./emails/BIQEnvSetup.jsx";
-import CaseA from "./coe/CaseA.jsx";
-import CaseB from "./coe/CaseB.jsx";
-import CaseC from "./coe/CaseC.jsx";
-import UATApiRequest from "./emails/UATApiRequest.jsx";
-import SSHKeyRequirements from "./emails/SSHKeyRequirements.jsx";
-import { FaUndo } from "react-icons/fa";
-import APIInfoRequired from "./emails/APIInforequest.jsx";
+
+import Subject from "./Subject";
+
+import PasswordReset from "./emails/PasswordReset";
+import NoActionNeeded from "./emails/NoActionNeeded";
+import AccountUnlock from "./emails/AccountUnlock";
+import TempPassword from "./emails/TempPassword";
+import HsdCreation from "./emails/HSDCreation";
+import InquirySuppression from "./emails/InquirySuppression";
+import OKTAUrl from "./emails/OKTAUrl";
+import OriginUrl from "./emails/OriginUrl";
+import BIQEnvSetup from "./emails/BIQEnvSetup";
+import UATApiRequest from "./emails/UATApiRequest";
+import SSHKeyRequirements from "./emails/SSHKeyRequirements";
+import APIInfoRequired from "./emails/APIInforequest";
+
+import CaseA from "./coe/CaseA";
+import CaseB from "./coe/CaseB";
+import CaseC from "./coe/CaseC";
 
 function capitalize(str) {
     // Check if the input string is empty or null
     if (!str) return str;
 
+    // Convert the entire string to lowercase
+    str = str.toLowerCase();
+
     // Capitalize the first letter and concatenate the rest of the string
-    return str.charAt(0).toUpperCase() + str.slice(1);
+    return str.toLowerCase().charAt(0).toUpperCase() + str.slice(1);
 }
 
 const EmailDetails = ({ selectedEmail }) => {
@@ -42,10 +47,21 @@ const EmailDetails = ({ selectedEmail }) => {
         setTempPassword("");
     };
 
-    // Reset clientName and caseNumber when selectedEmail changes
+    // Reset input when a different template has been clicked
     useEffect(() => {
         resetInput();
-    }, [selectedEmail]);
+    }, []);
+
+
+    useEffect(() => {
+        const callback = (e) => {
+            if (e.code === "Escape") {
+                resetInput();
+            }
+        };
+        document.addEventListener("keydown", callback);
+        return () => document.removeEventListener("keydown", callback);
+    }, []);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -159,23 +175,23 @@ const EmailDetails = ({ selectedEmail }) => {
                                                 clientName={clientName} userId={userId} capitalize={capitalize}/>}
                         {selectedEmail.name === "API Info Required" &&
                             <APIInfoRequired setSubject={setSubject} hsd={hsd} caseNumber={caseNumber}
-                                             clientName={clientName} userId={userId} capitalize={capitalize} />}
+                                             clientName={clientName} userId={userId} capitalize={capitalize}/>}
 
                         {/* --------------------------------------------------------------------------------------- */}
 
                         {selectedEmail.name === "Case A" &&
                             <CaseA setSubject={setSubject} caseNumber={caseNumber}
-                         clientName={clientName} userId={userId} capitalize={capitalize}/>
-                    }
-                    {selectedEmail.name === "Case B" &&
-                    <CaseB setSubject={setSubject} caseNumber={caseNumber}
-                           clientName={clientName} userId={userId} capitalize={capitalize}/>}
-                    {selectedEmail.name === "Case C" &&
-                    <CaseC setSubject={setSubject} caseNumber={caseNumber}
-                           clientName={clientName} userId={userId} capitalize={capitalize}/>}
+                                   clientName={clientName} userId={userId} capitalize={capitalize}/>
+                        }
+                        {selectedEmail.name === "Case B" &&
+                            <CaseB setSubject={setSubject} caseNumber={caseNumber}
+                                   clientName={clientName} userId={userId} capitalize={capitalize}/>}
+                        {selectedEmail.name === "Case C" &&
+                            <CaseC setSubject={setSubject} caseNumber={caseNumber}
+                                   clientName={clientName} userId={userId} capitalize={capitalize}/>}
+                    </div>
                 </div>
-                </div>
-                )}
+            )}
         </div>
     );
 };
