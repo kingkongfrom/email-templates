@@ -10,7 +10,6 @@ const ListHeader = ({ isChecked, setIsChecked }) => {
             <div className="right">
                 <Switch isChecked={isChecked} setIsChecked={setIsChecked}/>
             </div>
-
         </div>
     );
 };

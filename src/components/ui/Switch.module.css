@@ -11,21 +11,24 @@
 }
 
 .toggleLabel {
-    width: 50px;
+    color: white;
+    width: 60px;
     text-align: center;
     position: relative;
     font-size: 14px;
     cursor: pointer;
     user-select: none; /* Prevent text selection */
     padding: 4px 8px; /* Adjust padding for better appearance */
-    background-color: #ccc;
+    background-color: #135c9a;
     border-radius: 16px;
     transition: background-color 0.4s;
     border: solid 1px #fdfeff;
 }
 
+.toggleLabel:hover {
+    background-color: #246aa6;
+}
 .toggleInput:checked + .toggleLabel {
-    background-color: #135c9a; /* Change background color when switch is checked */
     color: white;
 }
 

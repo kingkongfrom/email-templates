@@ -244,3 +244,8 @@ li {
     }
 }
 
+.arrow {
+    position: relative;
+    top: 2px;
+    margin-left: 5px;
+}

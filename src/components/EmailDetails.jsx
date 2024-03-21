@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useState } from "react";
 
 import Subject from "./Subject";
 
@@ -38,10 +38,8 @@ const EmailDetails = ({ selectedEmail }) => {
     const [hsd, setHsd] = useState("");
     const [userId, setUserId] = useState("");
 
-
-
     return (
-        <div>
+        <Fragment>
             {selectedEmail && (
                 <div>
                     <h2 className="title">{selectedEmail.name}</h2>
@@ -100,7 +98,6 @@ const EmailDetails = ({ selectedEmail }) => {
                             <APIInfoRequired hsd={hsd} caseNumber={caseNumber}
                                              clientName={clientName} userId={userId} capitalize={capitalize}/>}
 
-                        {/* --------------------------------------------------------------------------------------- */}
 
                         {selectedEmail.name === "Case A" &&
                             <CaseA caseNumber={caseNumber}
@@ -115,7 +112,7 @@ const EmailDetails = ({ selectedEmail }) => {
                     </div>
                 </div>
             )}
-        </div>
+        </Fragment>
     );
 };
 

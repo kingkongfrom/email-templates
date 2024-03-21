@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { Flip, toast } from "react-toastify";
 
-// Custom hook for copying JSX content to clipboard
 const useCopyToClipboard = () => {
     const jsxContentRef = useRef(null);
 
@@ -9,14 +8,23 @@ const useCopyToClipboard = () => {
         if (jsxContentRef.current) {
             const jsxContent = Array.from(jsxContentRef.current.childNodes)
                 .map(node => {
-                    if (node.nodeName === 'P' || /^H[1-6]$/.test(node.nodeName)) {
-                        return `${node.textContent}\n`;
-                    } else if (node.nodeName === 'BR') {
-                        return '\n';
-                    } else if (node.nodeName === 'UL' || node.nodeName === 'OL') {
-                        return extractListContent(node, 1, 0);
+                    switch (node.nodeName) {
+                        case 'P':
+                        case 'H1':
+                        case 'H2':
+                        case 'H3':
+                        case 'H4':
+                        case 'H5':
+                        case 'H6':
+                            return `${node.textContent}\n`;
+                        case 'BR':
+                            return '\n';
+                        case 'UL':
+                        case 'OL':
+                            return extractListContent(node, 1, 0);
+                        default:
+                            return '';
                     }
-                    return '';
                 })
                 .join('');
 
@@ -24,12 +32,12 @@ const useCopyToClipboard = () => {
                 .then(() => {
                     console.log("JSX content copied to clipboard successfully");
                     toast("Copied to clipboard!", {
-                        position: "top-right", // Set position explicitly
-                        autoClose: 500, // Duration in milliseconds
-                        hideProgressBar: true, // Hide progress bar
-                        closeOnClick: true, // Close toast when clicked
-                        pauseOnHover: true, // Pause timer when hovered
-                        draggable: true, // Allow dragging to dismiss
+                        position: "top-right",
+                        autoClose: 500,
+                        hideProgressBar: true,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
                         transition: Flip,
                         theme: "colored",
                         style: { background: "#315375", color: "#fff" }
@@ -37,7 +45,7 @@ const useCopyToClipboard = () => {
                 })
                 .catch((error) => {
                     console.error("Failed to copy JSX content to clipboard:", error);
-                    toast.error("Failed to copy JSX content to clipboard"); // Display error toast
+                    toast.error("Failed to copy JSX content to clipboard");
                 });
         }
     };
@@ -58,11 +66,7 @@ const useCopyToClipboard = () => {
     };
 
     const getListBulletPoint = (listType, index) => {
-        if (listType === 'OL') {
-            return `${index}.`;
-        } else {
-            return '•';
-        }
+        return listType === 'OL' ? `${index}.` : '•';
     };
 
     return [jsxContentRef, copyToClipboard];
