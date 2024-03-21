@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 const CaseC = ({ setSubject }) => {
     setSubject("COE case C (Yet to be implemented)");
 

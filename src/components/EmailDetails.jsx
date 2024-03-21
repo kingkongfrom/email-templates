@@ -18,6 +18,7 @@ import APIInfoRequired from "./emails/APIInforequest";
 import CaseA from "./coe/CaseA";
 import CaseB from "./coe/CaseB";
 import CaseC from "./coe/CaseC";
+import { FaSync  } from "react-icons/fa";
 
 function capitalize(str) {
     // Check if the input string is empty or null
@@ -50,7 +51,7 @@ const EmailDetails = ({ selectedEmail }) => {
     // Reset input when a different template has been clicked
     useEffect(() => {
         resetInput();
-    }, []);
+    }, [selectedEmail]);
 
 
     useEffect(() => {
@@ -135,7 +136,7 @@ const EmailDetails = ({ selectedEmail }) => {
                                     />
                                 </Fragment>
                             }
-                            <button className="btn-reset" onClick={resetInput}><FaUndo/></button>
+                            <button className="btn-reset" onClick={resetInput}><FaSync /></button>
                         </div>
                         <Subject caseNumber={caseNumber} selectedEmail={selectedEmail} subject={subject}/>
 

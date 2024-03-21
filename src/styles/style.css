@@ -227,7 +227,7 @@ li {
     font-size: 18px;
 }
 
-.tracking {
+.new-input {
     opacity: 0; /* Start with text hidden */
     animation: fadeIn 0.2s ease forwards; /* Apply animation */
     animation-delay: 0.2s; /* Delay the animation */
@@ -243,3 +243,4 @@ li {
         color: #000;
     }
 }
+
