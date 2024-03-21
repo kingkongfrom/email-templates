@@ -4,10 +4,8 @@ import { FiCopy } from "react-icons/fi";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 
-const PasswordReset = ({ setSubject, clientName, caseNumber, capitalize }) => {
+const PasswordReset = ({ clientName, caseNumber, capitalize }) => {
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
-    setSubject("Password reset");
-
 
     return (
         <Fragment>

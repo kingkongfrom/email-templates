@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useState } from "react";
 import Main from "./components/Main.jsx";
 import Box from "./components/Box.jsx";
 import "./styles/style.css";
@@ -7,7 +7,7 @@ import EmailDetails from "./components/EmailDetails.jsx";
 import Welcome from "./components/Welcome.jsx";
 
 function App() {
-    const [selectedEmail, setSelectedEmail] = useState({ subject: null, id: null, name: null });
+    const [selectedEmail, setSelectedEmail] = useState({ name: null, subject: null, id: null, type: null });
 
     return (
         <Fragment>

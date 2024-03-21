@@ -4,8 +4,7 @@ import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 
-const APIInfoRequired = ({ setSubject, clientName, caseNumber, capitalize, }) => {
-    setSubject("API info required");
+const APIInfoRequired = ({ clientName, caseNumber, capitalize, }) => {
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
     return (
         <Fragment>

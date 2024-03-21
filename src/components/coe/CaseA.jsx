@@ -1,7 +1,4 @@
-const CaseA = ({ setSubject }) => {
-    setSubject("COE case A (Yet to be implemented)");
-
-
+const CaseA = () => {
     return (
         <div className="email-body">This template is not yet implemented, yet the template component is fully
             functional.</div>

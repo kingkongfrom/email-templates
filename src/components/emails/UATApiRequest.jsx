@@ -4,10 +4,9 @@ import { FiCopy } from "react-icons/fi";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 
-const UATApiRequest = ({ setSubject, caseNumber, clientName, capitalize }) => {
+const UATApiRequest = ({ caseNumber, clientName, capitalize }) => {
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
     const URL = "https://www.experian.com/consumer-information/net-connect-toolkit-form";
-    setSubject("UAT API account request");
 
     return (
         <Fragment>
@@ -17,7 +16,8 @@ const UATApiRequest = ({ setSubject, caseNumber, clientName, capitalize }) => {
                 <br/>
                 {caseNumber &&
                     <Fragment>
-                        <p className="tracking">{boilerplate.tracking}<span className="bold">{caseNumber.toUpperCase()}</span>.</p>
+                        <p className="tracking">{boilerplate.tracking}<span
+                            className="bold">{caseNumber.toUpperCase()}</span>.</p>
                         <br/>
                     </Fragment>
                 }

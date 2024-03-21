@@ -4,11 +4,9 @@ import useCopyToClipboard from "../../hooks/useCopyToClipboard.js";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data";
 
-const TempPassword = ({ setSubject, tempPassword, clientName, caseNumber, capitalize }) => {
+const TempPassword = ({ tempPassword, clientName, caseNumber, capitalize }) => {
     const resetUrl = "https://experian-nab.okta.com";
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
-    setSubject("[encrypt] | Temporary Password reset");
-
 
     return (
         <Fragment>

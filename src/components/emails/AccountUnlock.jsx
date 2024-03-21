@@ -4,9 +4,9 @@ import { FiCopy } from "react-icons/fi";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 
-const AccountUnlock = ({ setSubject, clientName, caseNumber, capitalize }) => {
+const AccountUnlock = ({ clientName, caseNumber, capitalize }) => {
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
-    setSubject("Account locked");
+
 
     return (
         <Fragment>
@@ -16,7 +16,8 @@ const AccountUnlock = ({ setSubject, clientName, caseNumber, capitalize }) => {
                 <br/>
                 {caseNumber &&
                     <Fragment>
-                        <p className="tracking">{boilerplate.tracking}<span className="bold">{caseNumber.toUpperCase()}</span>.</p>
+                        <p className="tracking">{boilerplate.tracking}<span
+                            className="bold">{caseNumber.toUpperCase()}</span>.</p>
                         <br/>
                     </Fragment>
                 }

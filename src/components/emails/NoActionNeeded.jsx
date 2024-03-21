@@ -4,9 +4,8 @@ import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 
-const NoActionNeeded = ({ setSubject, clientName, caseNumber, capitalize }) => {
+const NoActionNeeded = ({ clientName, caseNumber, capitalize }) => {
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
-        setSubject("No user found");
 
     return (
     <Fragment>

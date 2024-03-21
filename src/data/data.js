@@ -6,29 +6,31 @@ export const boilerplate = {
 
 export const emails = [
     {
+        type: "TSC", // Added type property to differentiate COE emails
         name: [
-            "Password reset",
-            "Account locked",
-            "Temporary password",
-            "No action needed",
-            "HSD creation",
-            "Inquiry suppression request",
-            "OKTA URL",
-            "Origin URL",
-            "BIQ env setup",
-            "UAT API account request",
-            "SSH Key requirements",
-            "API Info Required",
+            {name: "Password reset", subject: "Password reset"},
+            {name: "Account locked", subject: "Account unlocked"},
+            {name: "Temporary password", subject: "[encrypt] Temporary password"},
+            {name: "Account not found", subject: "Account not found"},
+            {name: "HSD creation", subject: "Head Security Designate request"},
+            {name: "Inquiry suppression request", subject: "Inquiry suppression request"},
+            {name: "OKTA URL", subject: "Experian OKTA profile"},
+            {name: "Origin URL", subject: "Experian admin portal"},
+            {name: "BIQ env setup", subject: "Business IQ environment setup"},
+            {name: "UAT API account request", subject: "UAT API account request"},
+            {name: "SSH Key requirements", subject: "[encrypt] SSH Key requirements"},
+            {name: "API Info Required", subject: "Information required"},
         ]
     }
 ];
 
 export const coe = [
     {
+        type: "COE", // Added type property to differentiate COE emails
         name: [
-            "Case A",
-            "Case B",
-            "Case C",
+            {name: "Case A", subject: "Case A"},
+            {name: "Case B", subject: "Case B"},
+            {name: "Case C", subject: "Case C"},
         ]
     }
 ];

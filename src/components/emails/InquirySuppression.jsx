@@ -4,11 +4,9 @@ import { FiCopy } from "react-icons/fi";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 
-const InquirySuppression = ({ setSubject, clientName, caseNumber, capitalize }) => {
+const InquirySuppression = ({ clientName, caseNumber, capitalize }) => {
     const mailto = "profilemaintenancedept@experian.com";
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
-    setSubject("Inquiry suppression request");
-
 
     return (
         <Fragment>

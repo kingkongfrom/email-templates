@@ -4,10 +4,9 @@ import useCopyToClipboard from "../../hooks/useCopyToClipboard.js";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 
-const OKTAUrl = ({ setSubject, clientName, caseNumber, capitalize }) => {
+const OKTAUrl = ({ clientName, caseNumber, capitalize }) => {
     const URL = "https://experian-nab.okta.com";
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
-    setSubject("Experian Okta profile URL");
 
     return (
         <Fragment>
@@ -17,7 +16,8 @@ const OKTAUrl = ({ setSubject, clientName, caseNumber, capitalize }) => {
                 <br/>
                 {caseNumber &&
                     <Fragment>
-                        <p className="tracking">{boilerplate.tracking}<span className="bold">{caseNumber.toUpperCase()}</span>.</p>
+                        <p className="tracking">{boilerplate.tracking}<span
+                            className="bold">{caseNumber.toUpperCase()}</span>.</p>
                         <br/>
                     </Fragment>
                 }

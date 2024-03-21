@@ -34,7 +34,6 @@ function capitalize(str) {
 const EmailDetails = ({ selectedEmail }) => {
     const [clientName, setClientName] = useState("");
     const [caseNumber, setCaseNumber] = useState("");
-    const [subject, setSubject] = useState("");
     const [tempPassword, setTempPassword] = useState("");
     const [hsd, setHsd] = useState("");
     const [userId, setUserId] = useState("");
@@ -42,7 +41,6 @@ const EmailDetails = ({ selectedEmail }) => {
     const resetInput = () => {
         setClientName("");
         setCaseNumber("");
-        setSubject("");
         setHsd("");
         setUserId("");
         setTempPassword("");
@@ -138,57 +136,58 @@ const EmailDetails = ({ selectedEmail }) => {
                             }
                             <button className="btn-reset" onClick={resetInput}><FaSync /></button>
                         </div>
-                        <Subject caseNumber={caseNumber} selectedEmail={selectedEmail} subject={subject}/>
-
+                        <Subject caseNumber={caseNumber} selectedEmail={selectedEmail} />
                         {selectedEmail.name === "Password reset" &&
-                            <PasswordReset setSubject={setSubject} clientName={clientName} caseNumber={caseNumber}
+                            <PasswordReset  clientName={clientName} caseNumber={caseNumber}
                                            capitalize={capitalize}/>}
-                        {selectedEmail.name === "No action needed" &&
-                            <NoActionNeeded setSubject={setSubject} clientName={clientName} caseNumber={caseNumber}
+                        {selectedEmail.name === "Account not found" &&
+                            <NoActionNeeded clientName={clientName} caseNumber={caseNumber}
                                             capitalize={capitalize}/>}
                         {selectedEmail.name === "Account locked" &&
-                            <AccountUnlock setSubject={setSubject} clientName={clientName} caseNumber={caseNumber}
+                            <AccountUnlock clientName={clientName} caseNumber={caseNumber}
                                            capitalize={capitalize}/>}
+
+
                         {selectedEmail.name === "Temporary password" &&
-                            <TempPassword tempPassword={tempPassword} setSubject={setSubject} clientName={clientName}
+                            <TempPassword tempPassword={tempPassword} clientName={clientName}
                                           caseNumber={caseNumber} capitalize={capitalize}/>}
                         {selectedEmail.name === "HSD creation" &&
-                            <HsdCreation selectedEmail={selectedEmail} setSubject={setSubject} clientName={clientName}
+                            <HsdCreation selectedEmail={selectedEmail} clientName={clientName}
                                          caseNumber={caseNumber}
                                          capitalize={capitalize}/>}
                         {selectedEmail.name === "Inquiry suppression request" &&
-                            <InquirySuppression setSubject={setSubject} clientName={clientName} caseNumber={caseNumber}
+                            <InquirySuppression  clientName={clientName} caseNumber={caseNumber}
                                                 capitalize={capitalize}/>}
                         {selectedEmail.name === "OKTA URL" &&
-                            <OKTAUrl setSubject={setSubject} clientName={clientName} caseNumber={caseNumber}
+                            <OKTAUrl  clientName={clientName} caseNumber={caseNumber}
                                      capitalize={capitalize}/>}
                         {selectedEmail.name === "Origin URL" &&
-                            <OriginUrl setSubject={setSubject} clientName={clientName} caseNumber={caseNumber}
+                            <OriginUrl  clientName={clientName} caseNumber={caseNumber}
                                        capitalize={capitalize}/>}
                         {selectedEmail.name === "BIQ env setup" &&
-                            <BIQEnvSetup setSubject={setSubject} hsd={hsd} caseNumber={caseNumber}
+                            <BIQEnvSetup  hsd={hsd} caseNumber={caseNumber}
                                          clientName={clientName} userId={userId} capitalize={capitalize}/>}
                         {selectedEmail.name === "UAT API account request" &&
-                            <UATApiRequest setSubject={setSubject} hsd={hsd} caseNumber={caseNumber}
+                            <UATApiRequest hsd={hsd} caseNumber={caseNumber}
                                            clientName={clientName} userId={userId} capitalize={capitalize}/>}
                         {selectedEmail.name === "SSH Key requirements" &&
-                            <SSHKeyRequirements setSubject={setSubject} hsd={hsd} caseNumber={caseNumber}
+                            <SSHKeyRequirements  hsd={hsd} caseNumber={caseNumber}
                                                 clientName={clientName} userId={userId} capitalize={capitalize}/>}
                         {selectedEmail.name === "API Info Required" &&
-                            <APIInfoRequired setSubject={setSubject} hsd={hsd} caseNumber={caseNumber}
+                            <APIInfoRequired  hsd={hsd} caseNumber={caseNumber}
                                              clientName={clientName} userId={userId} capitalize={capitalize}/>}
 
                         {/* --------------------------------------------------------------------------------------- */}
 
                         {selectedEmail.name === "Case A" &&
-                            <CaseA setSubject={setSubject} caseNumber={caseNumber}
+                            <CaseA  caseNumber={caseNumber}
                                    clientName={clientName} userId={userId} capitalize={capitalize}/>
                         }
                         {selectedEmail.name === "Case B" &&
-                            <CaseB setSubject={setSubject} caseNumber={caseNumber}
+                            <CaseB  caseNumber={caseNumber}
                                    clientName={clientName} userId={userId} capitalize={capitalize}/>}
                         {selectedEmail.name === "Case C" &&
-                            <CaseC setSubject={setSubject} caseNumber={caseNumber}
+                            <CaseC  caseNumber={caseNumber}
                                    clientName={clientName} userId={userId} capitalize={capitalize}/>}
                     </div>
                 </div>

@@ -5,10 +5,9 @@ import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 
 
-const SSHKeyRequirements = ({ setSubject, caseNumber, clientName, capitalize }) => {
+const SSHKeyRequirements = ({ caseNumber, clientName, capitalize }) => {
 
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
-    setSubject("SSH Key requirements");
 
     return (
         <Fragment>

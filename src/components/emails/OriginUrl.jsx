@@ -4,11 +4,9 @@ import useCopyToClipboard from "../../hooks/useCopyToClipboard.js";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 
-const OriginUrl = ({ setSubject, clientName, caseNumber, capitalize }) => {
+const OriginUrl = ({ clientName, caseNumber, capitalize }) => {
     const URL = "https://origin-na.experian.com";
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
-    setSubject("Experian Origin URL");
-
 
     return (
         <Fragment>
