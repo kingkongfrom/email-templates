@@ -4,12 +4,12 @@ import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 import subject from "../Subject.jsx";
+import useCapitalize from "../../hooks/useCapitalize.js";
 
-const HsdCreation = ({ clientName, caseNumber, capitalize }) => {
+const HsdCreation = ({ clientName, caseNumber }) => {
     const eSupport = "esupport@experian.com";
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
-
-
+    const capitalize = useCapitalize();
 
     return (
         <Fragment>

@@ -1,8 +1,10 @@
 import { useRef } from "react";
-import { Flip, toast } from "react-toastify";
+import { Flip } from "react-toastify";
+import useToast from "./useToast.js";
 
 const useCopyToClipboard = () => {
     const jsxContentRef = useRef(null);
+    const toast = useToast();
 
     const copyToClipboard = () => {
         if (jsxContentRef.current) {
@@ -17,6 +19,8 @@ const useCopyToClipboard = () => {
                         case 'H5':
                         case 'H6':
                             return `${node.textContent}\n`;
+                        case 'TEXTAREA':
+                            return `${node.value}\n`;
                         case 'BR':
                             return '\n';
                         case 'UL':
@@ -32,15 +36,9 @@ const useCopyToClipboard = () => {
                 .then(() => {
                     console.log("JSX content copied to clipboard successfully");
                     toast("Copied to clipboard!", {
-                        position: "top-right",
                         autoClose: 500,
-                        hideProgressBar: true,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
                         transition: Flip,
-                        theme: "colored",
-                        style: { background: "#315375", color: "#fff" }
+
                     });
                 })
                 .catch((error) => {

@@ -12,14 +12,102 @@ const InputFields = ({
                          userId,
                          setUserId,
                          setTempPassword,
-                         tempPassword
+                         tempPassword,
+                         incidentNumber,
+                         setIncidentNumber,
+                         contactName,
+                         setContactName,
+                         companyName,
+                         setCompanyName,
+                         emailAddress,
+                         setEmailAddress,
+                         phoneNumber,
+                         setPhoneNumber,
+                         shortDescription,
+                         setShortDescription,
                      }) => {
     const inputFields = [
-        { name: "clientName", value: clientName, setter: setClientName, placeholder: "Client's name" },
-        { name: "caseNumber", value: caseNumber, setter: setCaseNumber, placeholder: "Case number" },
-        { name: "tempPassword", value: tempPassword, setter: setTempPassword, placeholder: "Temporary password", condition: selectedEmail.name === "Temporary password" },
-        { name: "hsd", value: hsd, setter: setHsd, placeholder: "HDS name", condition: selectedEmail.name === "BIQ env setup" },
-        { name: "userId", value: userId, setter: setUserId, placeholder: "User ID", condition: selectedEmail.name === "BIQ env setup" }
+        {
+            name: "clientName",
+            value: clientName,
+            setter: setClientName,
+            placeholder: "Client's name"
+        },
+        {
+            name: "caseNumber",
+            value: caseNumber,
+            setter: setCaseNumber,
+            placeholder: "Case number",
+            condition: selectedEmail.name !== "Ascend handover"
+        },
+        {
+            name: "tempPassword",
+            value: tempPassword,
+            setter: setTempPassword,
+            placeholder: "Temporary password",
+            condition: selectedEmail.name === "Temporary password"
+        },
+        {
+            name: "hsd",
+            value: hsd,
+            setter: setHsd,
+            placeholder: "HDS name",
+            condition: selectedEmail.name === "BIQ env setup"
+        },
+        {
+            name: "userId",
+            value: userId,
+            setter: setUserId,
+            placeholder: "User ID",
+            condition: selectedEmail.name === "BIQ env setup"
+        },
+        /* COE input fields */
+        {
+            name: "incidentNumber",
+            value: incidentNumber,
+            setter: setIncidentNumber,
+            placeholder: "Incident number",
+            condition: selectedEmail.name === "Ascend handover"
+        },
+        {
+            name: "contactName",
+            value: contactName,
+            setter: setContactName,
+            placeholder: "Contact name",
+            condition: selectedEmail.name === "Ascend handover"
+        },
+        {
+            name: "companyName",
+            value: companyName,
+            setter: setCompanyName,
+            placeholder: "Company name",
+            condition: selectedEmail.name === "Ascend handover"
+        },
+        {
+            name: "emailAddress",
+            value: emailAddress,
+            setter: setEmailAddress,
+            placeholder: "Email address",
+            condition: selectedEmail.name === "Ascend handover",
+            className: "email-input"
+        },
+        {
+            name: "phoneNumber",
+            value: phoneNumber,
+            setter: setPhoneNumber,
+            placeholder: "Phone number",
+            condition: selectedEmail.name === "Ascend handover",
+            className: "phone-number-input"
+        },
+        {
+            name: "shortDescription",
+            value: shortDescription,
+            setter: setShortDescription,
+            placeholder: "Short description",
+            condition: selectedEmail.name === "Ascend handover",
+            className: "short-description-input"
+        },
+
     ];
 
     const resetInput = () => {
@@ -59,9 +147,10 @@ const InputFields = ({
                         value={field.value}
                         onChange={handleInputChange}
                         placeholder={field.placeholder}
+                        className={field.className}
                     /> : null
             ))}
-            <button className="btn-reset" onClick={resetInput}><FaSync /></button>
+            <button className="btn-reset" onClick={resetInput}><FaSync/></button>
         </div>
     );
 };

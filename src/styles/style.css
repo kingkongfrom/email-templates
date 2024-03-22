@@ -45,12 +45,6 @@ p {
     border-radius: 4px 4px 0 0;
 }
 
-.left {
-    width: 80%
-}
-
-.right {
-}
 
 .list-header-title {
     color: white;
@@ -109,9 +103,9 @@ p {
 
 .input-header {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 40px;
-    flex-wrap: wrap;
     width: 100%;
 }
 
@@ -121,7 +115,7 @@ input[type="text"] {
     border: 1px solid #ccc;
     transition: border-color 0.3s ease-in-out;
     outline: none; /* Remove default focus outline */
-    width: 115px;
+    width: 140px;
 }
 
 input[type="text"]:focus {
@@ -178,6 +172,22 @@ li {
     text-decoration: none;
     cursor: pointer;
     font-weight: bold;
+}
+
+.email-input {
+    width: 310px !important;
+    display: block;
+}
+
+.phone-number-input {
+    display: block !important;
+}
+
+.phone-number {
+
+}
+
+.smaller-text {
 }
 
 .temp-password {
@@ -248,4 +258,23 @@ li {
     position: relative;
     top: 2px;
     margin-left: 5px;
+}
+
+.description {
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    outline: none;
+    resize: none;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: transparent;
+    color: inherit;
+}
+
+.short-description-input {
+    display: block;
+    width: 310px !important;
 }

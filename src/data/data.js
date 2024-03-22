@@ -28,9 +28,7 @@ export const coe = [
     {
         type: "COE", // Added type property to differentiate COE emails
         name: [
-            {name: "Case A", subject: "Case A"},
-            {name: "Case B", subject: "Case B"},
-            {name: "Case C", subject: "Case C"},
+            {name: "Ascend handover", subject: "ASCEND SANDBOX"}
         ]
     }
 ];

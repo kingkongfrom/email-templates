@@ -27,7 +27,7 @@ const EmailList = ({ selectedEmail, setSelectedEmail }) => {
     return (
         <Fragment>
             <ListHeader isChecked={isChecked} setIsChecked={setIsChecked} selectedOption={selectedOption}
-                        onSelectedOption={handleOptionChange}/>
+                        onSelectedOption={handleOptionChange} />
             {isChecked ?
                 sortedCoe.map((name, index) => (
                     <div className={selectedEmail.name === name ? "active" : ""} key={index}

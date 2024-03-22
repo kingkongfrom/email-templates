@@ -1,11 +1,13 @@
-import { Fragment} from "react";
+import { Fragment } from "react";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 import { FiCopy } from "react-icons/fi";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
+import useCapitalize from "../../hooks/useCapitalize.js";
 
-const PasswordReset = ({ clientName, caseNumber, capitalize }) => {
+const PasswordReset = ({ clientName, caseNumber }) => {
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
+    const capitalize = useCapitalize();
 
     return (
         <Fragment>
@@ -15,7 +17,8 @@ const PasswordReset = ({ clientName, caseNumber, capitalize }) => {
                 <br/>
                 {caseNumber &&
                     <Fragment>
-                        <p className="tracking">{boilerplate.tracking}<span className="bold">{caseNumber.toUpperCase()}</span>.</p>
+                        <p className="tracking">{boilerplate.tracking}<span
+                            className="bold">{caseNumber.toUpperCase()}</span>.</p>
                         <br/>
                     </Fragment>
                 }

@@ -3,10 +3,12 @@ import { FiCopy } from "react-icons/fi";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard.js";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
+import useCapitalize from "../../hooks/useCapitalize.js";
 
-const OKTAUrl = ({ clientName, caseNumber, capitalize }) => {
+const OKTAUrl = ({ clientName, caseNumber }) => {
     const URL = "https://experian-nab.okta.com";
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
+    const capitalize = useCapitalize();
 
     return (
         <Fragment>

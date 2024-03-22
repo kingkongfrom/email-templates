@@ -15,7 +15,7 @@ function App() {
                 <Box width={400}>
                     <EmailList setSelectedEmail={setSelectedEmail} selectedEmail={selectedEmail} />
                 </Box>
-                <Box width={700}>
+                <Box width={800}>
                     {selectedEmail.id === null && <Welcome />}
                     {selectedEmail.id && <EmailDetails selectedEmail={selectedEmail} setSelectedEmail={setSelectedEmail} />}
                 </Box>

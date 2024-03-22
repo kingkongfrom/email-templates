@@ -1,8 +1,6 @@
 import styles from "./Switch.module.css";
-import { Fragment } from "react";
-import { FaRightLong } from "react-icons/fa6";
 
-function Switch({isChecked, setIsChecked}) {
+function Switch({ isChecked, setIsChecked }) {
 
     const handleToggle = () => {
         setIsChecked(!isChecked);
@@ -18,10 +16,10 @@ function Switch({isChecked, setIsChecked}) {
                 onChange={handleToggle}
             />
             <label htmlFor="toggle" className={styles.toggleLabel}>
-                {!isChecked ? <Fragment>COE <FaRightLong className="arrow"/></Fragment> : <Fragment>TSC <FaRightLong className="arrow"/></Fragment>}
+                {!isChecked ? "COE":
+                    "TSC"}
             </label>
         </div>
     );
 }
-
 export default Switch;

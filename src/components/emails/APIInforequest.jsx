@@ -3,9 +3,12 @@ import { FiCopy } from "react-icons/fi";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
+import useCapitalize from "../../hooks/useCapitalize.js";
 
-const APIInfoRequired = ({ clientName, caseNumber, capitalize, }) => {
+const APIInfoRequired = ({ clientName, caseNumber, }) => {
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
+    const capitalize = useCapitalize();
+
     return (
         <Fragment>
             <div ref={jsxContentRef} className="email-body">
