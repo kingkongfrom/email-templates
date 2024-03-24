@@ -24,11 +24,9 @@ const Subject = ({ caseNumber, selectedEmail, companyName, shortDescription, inc
     const copyToClipboard = () => {
         let textToCopy;
         if (selectedEmail.type === "COE") {
-            textToCopy = `${subject} | ${companyName.toUpperCase()} | ${shortDescription.toUpperCase()} | ${incidentNumber.toUpperCase()}`;
+            textToCopy = `${subject} ${companyName && `| ${companyName.toUpperCase()}`} ${shortDescription && `| ${shortDescription.toUpperCase()}`} ${incidentNumber && `| ${incidentNumber.toUpperCase()}`}`;
         } else if (selectedEmail.type === "TSC") {
-            textToCopy = `${subject} ${caseNumber ? `| case#${caseNumber}` : ""}`;
-        } else if (selectedEmail.type === "CSAT") {
-            textToCopy = `${subject} ${incidentNumber ? incidentNumber : ""}`;
+            textToCopy = `${subject} ${caseNumber ? caseNumber`| case#${caseNumber.toUpperCase()}` : incidentNumber`| ${incidentNumber.toUpperCase()}`}`;
         } else {
             console.log("If you are seeing this the subject failed to load the correct text");
         }
@@ -61,7 +59,7 @@ const Subject = ({ caseNumber, selectedEmail, companyName, shortDescription, inc
                         {incidentNumber && ` | ${incidentNumber.toUpperCase()}`}
                     </div>
                 ) : (
-                    <div>{subject} {caseNumber && `| case#${caseNumber}`}</div>
+                    <div>{subject} {incidentNumber ? ` | ${incidentNumber.toUpperCase()}` : caseNumber && `| case#${caseNumber.toUpperCase()}`}</div>
                 )}
                 <FiCopy className="copy-icon" onClick={copyToClipboard}/>
             </div>

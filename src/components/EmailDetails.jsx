@@ -19,6 +19,7 @@ import AscendHandover from "./coe/AscendHandover.jsx";
 import InputFields from "./ui/InputFields.jsx";
 import IssueResolved from "./emails/IssueResolved.jsx";
 import CaseEscalated from "./emails/CaseEscalated.jsx";
+import IncidentEscalated from "./coe/IncidentEscalated.jsx";
 
 const EmailDetails = ({ selectedEmail }) => {
     const [clientName, setClientName] = useState("");
@@ -108,6 +109,9 @@ const EmailDetails = ({ selectedEmail }) => {
                                             contactName={contactName} emailAddress={emailAddress}
                                             phoneNumber={phoneNumber}
                                             shortDescription={shortDescription}/>}
+
+                        {selectedEmail.name === "Incident has been escalated" &&
+                            <IncidentEscalated clientName={clientName} incidentNumber={incidentNumber} />}
 
 
                     </div>

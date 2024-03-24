@@ -24,7 +24,6 @@ export const emails = [
             {name: "API Info Required", subject: "Information required", type: "TSC"},
             {name: "Issue has been resolved", subject: "Your issue has been resolved", type: "TSC"},
             {name: "Case has been escalated", subject: "Your case has being escalated", type: "CSAT"},
-
         ]
     }
 ];
@@ -33,7 +32,8 @@ export const coe = [
     {
         type: "COE", // Added type property to differentiate COE emails
         name: [
-            {name: "Ascend handover", subject: "ASCEND SANDBOX", type: "COE"}
+            {name: "Ascend handover", subject: "ASCEND SANDBOX", type: "COE"},
+            {name: "Incident has been escalated", subject: "Your incident has been escalated", type: "COE"}
         ]
     }
 ];
