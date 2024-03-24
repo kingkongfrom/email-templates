@@ -25,7 +25,7 @@ const AccountUnlock = ({ clientName, caseNumber }) => {
                 <p>As requested your account has been unlocked, please try login to your account using your current
                     password.</p>
                 <br/>
-                <p>{boilerplate.closing}</p>
+                <p>{boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span></p>
             </div>
 
             <FiCopy className="copy-icon-body" onClick={copyToClipboard}/>

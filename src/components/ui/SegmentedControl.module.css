@@ -1,0 +1,42 @@
+/* SegmentedControl.module.css */
+
+.segmentedControl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, #e5e5e5, #706f6f); /* Silver metallic gradient */
+    border: 1px solid #a9a9a9; /* Darker border */
+    overflow: hidden;
+    border-radius: 50px;
+    height: 22px;
+    width: 110px;
+    font-size: 12px;
+    position: relative;
+}
+
+.segmentedControlInput {
+    display: none;
+}
+
+.segmentedControlLabel {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: Arial, sans-serif;
+    color: #0a0a0a; /* Darker text color */
+}
+
+.segmentedControlLabel:hover {
+    background: #858383; /* Silver metallic gradient */
+}
+
+.segmentedControlInput:checked + .segmentedControlLabel {
+    background: linear-gradient(to bottom, #173f5b, #9fc0ea); /* Silver metallic gradient */
+    color: white; /* Darker text color when selected */
+}
+
+.segmentedControlInput:checked + .segmentedControlLabel:hover {
+    background-color: #808080; /* Darker background on hover when selected */
+}

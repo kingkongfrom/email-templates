@@ -51,7 +51,7 @@ const TempPassword = ({ tempPassword, clientName, caseNumber }) => {
 
 
                 <br/>
-                <p>{boilerplate.closing}</p>
+                <p>{boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span></p>
             </div>
             <FiCopy className="copy-icon-body" onClick={copyToClipboard}/>
             <ToastContainer/>

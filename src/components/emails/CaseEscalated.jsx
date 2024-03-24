@@ -1,37 +1,39 @@
 import { Fragment } from "react";
-import { FiCopy } from "react-icons/fi";
-import useCopyToClipboard from "../../hooks/useCopyToClipboard.js";
-import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
+import { FiCopy } from "react-icons/fi";
+import { ToastContainer } from "react-toastify";
+import useCopyToClipboard from "../../hooks/useCopyToClipboard.js";
 import useCapitalize from "../../hooks/useCapitalize.js";
 
-const OriginUrl = ({ clientName, caseNumber }) => {
-    const URL = "https://origin-na.experian.com";
+const CaseEscalated = ({ clientName, caseNumber, incidentNumber }) => {
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
     const capitalize = useCapitalize();
-
     return (
         <Fragment>
             <div ref={jsxContentRef} className="email-body">
                 <p>Dear {clientName === "" ? "Client," : `${capitalize(clientName)},`}</p>
-                <p>{boilerplate.greeting}</p>
+                <p>{boilerplate.csatGreeting}</p>
                 <br/>
                 {caseNumber &&
                     <Fragment>
-                        <p className="tracking">{boilerplate.tracking}<span className="bold">{caseNumber.toUpperCase()}</span>.</p>
+                        <p className="tracking">{boilerplate.tracking}<span
+                            className="bold">{caseNumber.toUpperCase()}</span>.</p>
                         <br/>
                     </Fragment>
                 }
-                <p>Please use the following URL in order to access your administration portal</p>
-                <p><a href={URL} className="url">{URL}</a></p>
+
+                <p>
+                    Your case has been escalated to our Second Level Support Team for further assistance under
+                    the incident number <span className="bold">{incidentNumber && `${incidentNumber.toUpperCase()}.`}</span>
+                </p>
+
                 <br/>
-                <p>{boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span></p>
+                {boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span>
             </div>
 
             <FiCopy className="copy-icon-body" onClick={copyToClipboard}/>
             <ToastContainer/>
         </Fragment>
-
     );
 };
-export default OriginUrl;
+export default CaseEscalated;

@@ -13,7 +13,7 @@ function App() {
         <Fragment>
             <Main>
                 <Box width={400}>
-                    <EmailList setSelectedEmail={setSelectedEmail} selectedEmail={selectedEmail} />
+                    <EmailList selectedEmail={selectedEmail} setSelectedEmail={setSelectedEmail}/>
                 </Box>
                 <Box width={800}>
                     {selectedEmail.id === null && <Welcome />}

@@ -3,9 +3,8 @@ import { ToastContainer, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { emails, coe } from "../data/data.js";
 import useToast from "../hooks/useToast.js";
-import { useEffect } from "react";
 
-const Subject = ({ caseNumber, selectedEmail, companyName, shortDescription }) => {
+const Subject = ({ caseNumber, selectedEmail, companyName, shortDescription, incidentNumber }) => {
     const toast = useToast();
 
     // Determine the templates array based on the selected email type
@@ -24,11 +23,17 @@ const Subject = ({ caseNumber, selectedEmail, companyName, shortDescription }) =
 
     const copyToClipboard = () => {
         let textToCopy;
-        if (selectedEmail?.type === "COE") {
-            textToCopy = `${subject} | ${companyName.toUpperCase()} | ${shortDescription.toUpperCase()}`;
-        } else {
+        if (selectedEmail.type === "COE") {
+            textToCopy = `${subject} | ${companyName.toUpperCase()} | ${shortDescription.toUpperCase()} | ${incidentNumber.toUpperCase()}`;
+        } else if (selectedEmail.type === "TSC") {
             textToCopy = `${subject} ${caseNumber ? `| case#${caseNumber}` : ""}`;
+        } else if (selectedEmail.type === "CSAT") {
+            textToCopy = `${subject} ${incidentNumber ? incidentNumber : ""}`;
+        } else {
+            console.log("If you are seeing this the subject failed to load the correct text");
         }
+
+
         navigator.clipboard
             .writeText(textToCopy)
             .then(() => {
@@ -49,7 +54,12 @@ const Subject = ({ caseNumber, selectedEmail, companyName, shortDescription }) =
             <div className="subject-body">
                 {/* Render different subject line JSX based on email type */}
                 {selectedEmail?.type === "COE" ? (
-                    <div>{subject} {companyName && `| ${companyName.toUpperCase()}`} {shortDescription && `| ${shortDescription.toUpperCase()}`} </div>
+                    <div>
+                        {subject}
+                        {companyName && ` | ${companyName.toUpperCase()}`}
+                        {shortDescription && ` | ${shortDescription.toUpperCase()}`}
+                        {incidentNumber && ` | ${incidentNumber.toUpperCase()}`}
+                    </div>
                 ) : (
                     <div>{subject} {caseNumber && `| case#${caseNumber}`}</div>
                 )}

@@ -26,7 +26,7 @@ const OKTAUrl = ({ clientName, caseNumber }) => {
                 <p>Please use the following URL to access your Experian OKTA profile.</p>
                 <p><a href={URL} className="url">{URL}</a></p>
                 <br/>
-                <p>{boilerplate.closing}</p>
+                <p>{boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span></p>
             </div>
 
             <FiCopy className="copy-icon-body" onClick={copyToClipboard}/>

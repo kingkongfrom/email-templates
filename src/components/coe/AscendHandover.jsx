@@ -12,6 +12,7 @@ const AscendHandover = ({
                             phoneNumber,
                             shortDescription,
                         }) => {
+
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
     const capitalize = useCapitalize();
     const textareaRef = useRef("");
@@ -39,7 +40,7 @@ const AscendHandover = ({
     useEffect(() => {
         const handleKeyDown = (event) => {
             if (event.code === "Escape") {
-                textareaRef.current.value = ""; // Reset textarea value
+                textareaRef["current"].value = ""; // Reset textarea value
                 adjustTextareaHeight(); // Reset textarea height
             }
         };
@@ -65,11 +66,16 @@ const AscendHandover = ({
                 <p>Find below the details for the reported issue:</p>
                 <br/>
 
-                <p>Email reported from source: <span
-                    className="mailto">{"etechsupport@experian.com<mailto:etechsupport@experian.com>"}</span></p>
-                <p>Client Name: <span className="client-name">{capitalize(clientName)}</span></p>
+                <p>
+                    Email reported from source: <span
+                    className="mailto">{"etechsupport@experian.com<mailto:etechsupport@experian.com>"}</span>
+                </p>
+                <p>
+                    Client Name: <span className="client-name">{capitalize(clientName)}</span>
+                </p>
                 <p>Client Contact: <span className="contact-name">{capitalize(contactName)}</span></p>
-                <p>Email Address: <span
+                <p>
+                    Email Address: <span
                     className="mailto">{emailAddress && `${emailAddress.toLowerCase()}<mailto:${emailAddress.toLowerCase()}>`}</span>
                 </p>
                 <p>Phone number: {renderPhoneNumber()}</p>

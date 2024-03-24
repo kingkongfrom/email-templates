@@ -1,16 +1,17 @@
-import Switch from "./ui/Switch.jsx";
+import SegmentedControl from "./ui/SegmentedControl.jsx";
 
-const ListHeader = ({ isChecked, setIsChecked }) => {
+const ListHeader = ({ selectedOption, onSelectedOption }) => {
 
     return (
         <div className="list-header">
             <div className="left">
-                <p className="list-header-title">{isChecked ? "COE Email Handling" : "TSC Email Handling"}</p>
+                <p className="list-header-title">{selectedOption === "COE" ? "COE Email Handling" : "TSC Email Handling"}</p>
             </div>
             <div className="right">
-                <Switch isChecked={isChecked} setIsChecked={setIsChecked}/>
+                <SegmentedControl selectedOption={selectedOption} onSelectedOption={onSelectedOption}/>
             </div>
         </div>
     );
 };
+
 export default ListHeader;

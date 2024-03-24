@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-    background-color: #ffffff;
+    background-color: #efeeee;
     font-family: Arial, sans-serif;
 }
 
@@ -29,6 +29,7 @@ p {
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
     overflow: auto;
     scrollbar-width: none;
+    background-color: white;
 }
 
 .template-list {
@@ -36,10 +37,11 @@ p {
 }
 
 .list-header {
+    position: fixed;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 0 40px;
+    width: 400px;
     background-color: #315375;
     height: 70px;
     border-radius: 4px 4px 0 0;
@@ -47,8 +49,11 @@ p {
 
 
 .list-header-title {
-    color: white;
     font-size: 20px;
+    background: linear-gradient(to right, #d2d2d2, #c5c5c3, #b4b4b4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .container {
@@ -64,7 +69,9 @@ p {
     font-size: 20px;
     padding-left: 10px;
 }
-
+.email-items {
+    margin-top: 71px;
+}
 .email-item {
     padding: 0 20px;
     display: flex;
@@ -75,7 +82,7 @@ p {
 
 .email-item:hover {
     background-color: rgba(220, 221, 222, 0.42);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1)
 }
 
 .number {
@@ -83,14 +90,17 @@ p {
     font-weight: 500;
     color: #616365;
     padding-right: 1rem;
+
 }
 
 .title {
     margin: 2rem auto;
     text-align: center;
     font-size: 28px;
-    color: #315375;
-
+    background: linear-gradient(to bottom, #6086ab, #1e416e, #062748); /* Metallic navy blue gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .num-active {
@@ -164,6 +174,7 @@ li {
 .active {
     background-color: #f0f0f0; /* Example background color */
     border-left: 5px solid #3d648d; /* Example border color */
+    box-shadow: 10px 1px 5px rgba(0, 0, 0, 0.1)
     /* Add any other styles to distinguish the active item */
 }
 
@@ -197,6 +208,7 @@ li {
 .copy-icon {
     color: #545151;
     font-size: 25px;
+    padding: 0 5px;
 }
 
 .copy-icon:hover {
@@ -233,8 +245,7 @@ li {
 }
 
 .btn-reset:hover {
-    transform: scale(1.1);
-    font-size: 18px;
+    color: #5e7994;
 }
 
 .tracking {
@@ -278,3 +289,13 @@ li {
     display: block;
     width: 310px !important;
 }
+
+
+.img-prototype {
+    margin-top: 30px;
+    height: 600px;
+}
+
+
+
+

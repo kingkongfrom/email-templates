@@ -17,6 +17,8 @@ import APIInfoRequired from "./emails/APIInforequest";
 
 import AscendHandover from "./coe/AscendHandover.jsx";
 import InputFields from "./ui/InputFields.jsx";
+import IssueResolved from "./emails/IssueResolved.jsx";
+import CaseEscalated from "./emails/CaseEscalated.jsx";
 
 const EmailDetails = ({ selectedEmail }) => {
     const [clientName, setClientName] = useState("");
@@ -65,7 +67,7 @@ const EmailDetails = ({ selectedEmail }) => {
                         />
 
                         <Subject caseNumber={caseNumber} selectedEmail={selectedEmail} companyName={companyName}
-                                 shortDescription={shortDescription}/>
+                                 shortDescription={shortDescription} incidentNumber={incidentNumber}/>
 
                         {selectedEmail.name === "Password reset" &&
                             <PasswordReset clientName={clientName} caseNumber={caseNumber}/>}
@@ -94,7 +96,12 @@ const EmailDetails = ({ selectedEmail }) => {
                         {selectedEmail.name === "API Info Required" &&
                             <APIInfoRequired hsd={hsd} caseNumber={caseNumber} clientName={clientName}
                                              userId={userId}/>}
-
+                        {selectedEmail.name === "Issue has been resolved" &&
+                            <IssueResolved caseNumber={caseNumber} clientName={clientName}
+                                             userId={userId}/>}
+                        {selectedEmail.name === "Case has been escalated" &&
+                            <CaseEscalated  clientName={clientName}
+                                           userId={userId} incidentNumber={incidentNumber}/>}
 
                         {selectedEmail.name === "Ascend handover" &&
                             <AscendHandover clientName={clientName} incidentNumber={incidentNumber} userId={userId}

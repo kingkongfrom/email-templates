@@ -41,7 +41,7 @@ const HsdCreation = ({ clientName, caseNumber }) => {
                     fill it
                     out.</p>
                 <br/>
-                <p>{boilerplate.closing}</p>
+                <p>{boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span></p>
             </div>
 
             <FiCopy className="copy-icon-body" onClick={copyToClipboard}/>

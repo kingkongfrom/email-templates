@@ -61,7 +61,7 @@ const BiqEnvSetup = ({ caseNumber, hsd, clientName, userId }) => {
                     <li> Click on the 'Save and Finish' button located at the bottom of the panel.</li>
                 </ol>
                 <br/>
-                <p>{boilerplate.closing}</p>
+                <p>{boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span></p>
             </div>
 
             <FiCopy className="copy-icon-body" onClick={copyToClipboard}/>

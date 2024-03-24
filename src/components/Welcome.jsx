@@ -1,10 +1,9 @@
-import { FiCodesandbox } from "react-icons/fi";
 const Welcome = () => {
     return (
         <div style={styles.container}>
             <h1 style={styles.heading}>TSC | COE</h1>
             <p style={styles.text}>Select a template from the left panel to get started.</p>
-            <FiCodesandbox style={styles.icon}/>
+            <img src="src/images/prototype.png" className="img-prototype"/>
 
         </div>
     );

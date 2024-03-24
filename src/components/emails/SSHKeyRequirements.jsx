@@ -56,7 +56,7 @@ const SSHKeyRequirements = ({ caseNumber, clientName }) => {
                 <p>ELdstbHZiGrvTG9NLVDgEUoEYSrQOjlnIxwfKTiALElVMvsoQPLvrfZQSV6aU</p>
                 <p>JV+Q== appworx@hxncis11</p>
                 <br/>
-                <p>{boilerplate.closing}</p>
+                <p>{boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span></p>
             </div>
 
             <FiCopy className="copy-icon-body" onClick={copyToClipboard}/>

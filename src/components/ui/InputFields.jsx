@@ -38,7 +38,7 @@ const InputFields = ({
             value: caseNumber,
             setter: setCaseNumber,
             placeholder: "Case number",
-            condition: selectedEmail.name !== "Ascend handover"
+            condition: selectedEmail.name !== "Ascend handover" && selectedEmail.name !== "Case has been escalated"
         },
         {
             name: "tempPassword",
@@ -67,7 +67,7 @@ const InputFields = ({
             value: incidentNumber,
             setter: setIncidentNumber,
             placeholder: "Incident number",
-            condition: selectedEmail.name === "Ascend handover"
+            condition: selectedEmail.name === "Ascend handover" || selectedEmail.name === "Case has been escalated"
         },
         {
             name: "contactName",

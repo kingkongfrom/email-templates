@@ -45,7 +45,7 @@ const APIInfoRequired = ({ clientName, caseNumber, }) => {
                 </ul>
                 <p>Please reply to this email with the information requested as soon as possible.</p>
                 <br/>
-                <p>{boilerplate.closing}</p>
+                <p>{boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span></p>
             </div>
             <FiCopy className="copy-icon-body" onClick={copyToClipboard}/>
             <ToastContainer/>

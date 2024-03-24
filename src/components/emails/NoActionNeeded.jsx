@@ -29,7 +29,7 @@ const NoActionNeeded = ({ clientName, caseNumber }) => {
                 coworker with access to Experian, with that information we would be able to find your user ID.
             </p>
             <br/>
-            <p>{boilerplate.closing}</p>
+            <p>{boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span></p>
         </div>
 
         <FiCopy className="copy-icon-body" onClick={copyToClipboard}/>
