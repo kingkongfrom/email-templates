@@ -1,33 +1,162 @@
+import { Fragment } from "react";
+import { FiCopy } from "react-icons/fi";
+import { ToastContainer } from "react-toastify";
+import useCopyFromLanding from "../hooks/useCopyfromLanding.js";
+
 const Welcome = () => {
+    const copyToClipboard = useCopyFromLanding();
+    const handleCopy = (index) => {
+        const ulElement = document.querySelectorAll("ul")[index];
+        if (ulElement) {
+            const ulText = Array.from(ulElement.querySelectorAll("li"))
+                .map(li => `• ${li.textContent}`)
+                .join("\n");
+            copyToClipboard(ulText);
+        }
+    };
+
     return (
-        <div style={styles.container}>
-            <h1 style={styles.heading}>TSC | COE</h1>
-            <p style={styles.text}>Select a template from the left panel to get started.</p>
-            <img src="/images/prototype.png" className="img-prototype" alt="Prototype Image" />
-        </div>
+        <Fragment>
+                <div style={styles.container}>
+                    <h1 style={styles.heading}>Boilerplate</h1>
+                    <p style={styles.text}></p>
+                    {/*<img src="/images/prototype.png" className="img-prototype" alt="Prototype Image" />*/}
+                </div>
+            <div style={styles.content}>
+                <div style={styles.copyAndPasteGroup}>
+                    <p style={styles.copyAndPasteTitle} className="bold">Account locked</p>
+                    <div style={styles.row}>
+                        <ul>
+                            <li>User authenticated</li>
+                            <li>User requested assistance unlocking account</li>
+                            <li>Account unlocked as per client request</li>
+                            <li>Access granted</li>
+                            <li>No further action required by user</li>
+                        </ul>
+                        <div>
+                            <FiCopy className="copy-icon" onClick={() => handleCopy(0)}/>
+                        </div>
+                    </div>
+                </div>
+
+                <div style={styles.copyAndPasteGroup}>
+                    <p style={styles.copyAndPasteTitle} className="bold">Password Reset</p>
+                    <div style={styles.row}>
+                        <ul>
+                            <li>User authenticated</li>
+                            <li>User requested assistance resetting the password</li>
+                            <li>Reset Token sent via email</li>
+                            <li>User was prompted to create a new password</li>
+                            <li>User was able to complete the password reset process</li>
+                            <li>No further action required by user</li>
+                        </ul>
+                        <div>
+                            <FiCopy className="copy-icon" onClick={() => handleCopy(1)}/>
+                        </div>
+                    </div>
+                </div>
+
+                <div style={styles.copyAndPasteGroup}>
+                    <p style={styles.copyAndPasteTitle} className="bold">Password reset / Locked account</p>
+                    <div style={styles.row}>
+                        <ul>
+                            <li>User authenticated</li>
+                            <li>Unlocked account upon request</li>
+                            <li>Password reset provided upon user's request</li>
+                            <li>User was prompted to create a new password</li>
+                            <li>User was able to complete the password reset process</li>
+                            <li>No further action required by user</li>
+                        </ul>
+                        <div>
+                            <FiCopy className="copy-icon" onClick={() => handleCopy(2)}/>
+                        </div>
+                    </div>
+                </div>
+
+                <div style={styles.copyAndPasteGroup}>
+                    <p style={styles.copyAndPasteTitle} className="bold">MFA reset</p>
+                    <div style={styles.row}>
+                        <ul>
+                            <li>User authenticated</li>
+                            <li>User requested assistance restoring security question associated to login</li>
+                            <li>MFA reset provided</li>
+                            <li>User access granted</li>
+                            <li>No further action needed</li>
+                        </ul>
+                        <div>
+                            <FiCopy className="copy-icon" onClick={() => handleCopy(3)}/>
+                        </div>
+                    </div>
+                </div>
+
+                <div style={styles.copyAndPasteGroup}>
+                    <p style={styles.copyAndPasteTitle} className="bold"> Matching Policy not found</p>
+                    <div style={styles.row}>
+                        <ul>
+                            <li>User authenticated</li>
+                            <li>User reported "Matching policy not found while trying to process Assertion" error</li>
+                            <li>Cookies anc cached cleared form browser</li>
+                            <li>"Experian Access" Hyperlink typed manually</li>
+                            <li>Issue resolved, access granted</li>
+                            <li>no further action needed</li>
+                        </ul>
+                        <div>
+                            <FiCopy className="copy-icon" onClick={() => handleCopy(4)}/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ToastContainer/>
+        </Fragment>
     );
 };
 
 const styles = {
+    content: {
+        marginTop: "120px",
+        marginBottom: "50px"
+    },
     container: {
         textAlign: "center",
-        marginTop: "50px",
+        marginBottom: "50px",
+        backgroundColor: "#315375",
+        height: "70px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "absolute",
+        width: "800px",
+        borderRadius: "5px 5px 0 0",
+        minWidth: "400px",
+
     },
     heading: {
         fontSize: "2rem",
         fontWeight: "bold",
-        marginBottom: "20px",
-        color: "#315375"
+        backgroundImage: "linear-gradient(to right, #d2d2d2, #c5c5c3, #b4b4b4)",
+        WebkitBackgroundClip: "text",
+        backgroundClip: "text",
+        color: "transparent",
     },
     text: {
         fontSize: "1.2rem",
         color: "#444",
     },
-    icon: {
+    copyAndPasteGroup: {
         marginTop: "30px",
-        fontSize: "5rem",
+    },
+    copyAndPasteTitle: {
+        paddingLeft: "72px",
+        fontSize: "20px",
         color: "#315375"
-    }
+    },
+    row: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        padding: "0 50px"
+    },
+
 };
 
 export default Welcome;

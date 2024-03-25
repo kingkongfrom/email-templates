@@ -8,6 +8,12 @@ import Welcome from "./components/Welcome.jsx";
 
 function App() {
     const [selectedEmail, setSelectedEmail] = useState({ name: null, subject: null, id: null, type: null });
+    const [isToggled, setIsToggled] = useState(true);
+
+
+    const handleToggle = () => {
+        setIsToggled((toggled) => !toggled)
+    }
 
     return (
         <Fragment>
@@ -16,8 +22,10 @@ function App() {
                     <EmailList selectedEmail={selectedEmail} setSelectedEmail={setSelectedEmail}/>
                 </Box>
                 <Box width={800}>
-                    {selectedEmail.id === null && <Welcome />}
-                    {selectedEmail.id && <EmailDetails selectedEmail={selectedEmail} setSelectedEmail={setSelectedEmail} />}
+
+                    {selectedEmail.id === null && <Welcome onToggle={handleToggle}/>}
+                    {selectedEmail.id &&
+                        <EmailDetails selectedEmail={selectedEmail} setSelectedEmail={setSelectedEmail}/>}
                 </Box>
             </Main>
         </Fragment>

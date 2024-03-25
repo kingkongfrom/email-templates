@@ -39,8 +39,11 @@ const EmailDetails = ({ selectedEmail }) => {
         <Fragment>
             {selectedEmail && (
                 <div>
-                    <h2 className="title">{selectedEmail.name}</h2>
-                    <div className="emailDetails">
+                    <div className="details-header">
+                        <h2 className="title">{selectedEmail.name}</h2>
+                    </div>
+
+                    <div className="email-details">
                         <InputFields
                             clientName={clientName}
                             setClientName={setClientName}

@@ -24,6 +24,7 @@ p {
 
 .box {
     min-height: 600px;
+    min-width: 400px;
     height: 90vh;
     border-radius: 7px;
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
@@ -56,6 +57,13 @@ p {
     color: transparent;
 }
 
+.body-header {
+    position: absolute;
+    background-color: #315375;
+    height: 70px;
+    width: 800px;
+}
+
 .container {
     display: flex;
     width: 100%;
@@ -71,6 +79,7 @@ p {
 }
 .email-items {
     margin-top: 71px;
+
 }
 .email-item {
     padding: 0 20px;
@@ -93,11 +102,21 @@ p {
 
 }
 
+.details-header {
+    position: absolute;
+    background-color: #315375;
+    height: 70px;
+    width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .title {
-    margin: 2rem auto;
+    margin: 0 auto;
     text-align: center;
     font-size: 28px;
-    background: linear-gradient(to bottom, #6086ab, #1e416e, #062748); /* Metallic navy blue gradient */
+    background: linear-gradient(to right, #d2d2d2, #c5c5c3, #b4b4b4);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -107,8 +126,8 @@ p {
     color: #315375;
 }
 
-.emailDetails {
-    margin: 40px;
+.email-details {
+   padding: 120px 50px;
 }
 
 .input-header {
@@ -296,6 +315,15 @@ li {
     height: 600px;
 }
 
+.copy-icon {
+    font-size: 30px;
+    color: #444;
+}
+
+.copy-icon:hover {
+    font-size: 32px;
+    color: #969696
+}
 
 
 
