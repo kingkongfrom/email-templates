@@ -26,11 +26,10 @@ const Subject = ({ caseNumber, selectedEmail, companyName, shortDescription, inc
         if (selectedEmail.type === "COE") {
             textToCopy = `${subject} ${companyName && `| ${companyName.toUpperCase()}`} ${shortDescription && `| ${shortDescription.toUpperCase()}`} ${incidentNumber && `| ${incidentNumber.toUpperCase()}`}`;
         } else if (selectedEmail.type === "TSC") {
-            textToCopy = `${subject} ${caseNumber ? caseNumber`| case#${caseNumber.toUpperCase()}` : incidentNumber`| ${incidentNumber.toUpperCase()}`}`;
+            textToCopy = `${subject} ${caseNumber ? `| case#${caseNumber.toUpperCase()}` : ''} ${incidentNumber ? `| ${incidentNumber.toUpperCase()}` : ''}`;
         } else {
             console.log("If you are seeing this the subject failed to load the correct text");
         }
-
 
         navigator.clipboard
             .writeText(textToCopy)
