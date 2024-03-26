@@ -19,7 +19,7 @@ const IncidentEscalated = ({ clientName, incidentNumber }) => {
                 </p>
                 <p>As soon as we receive updates for the incident they will be provided.</p>
                 <br/>
-                <p>{boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span></p>
+                <p>{boilerplate.closing} <span className="bold">{boilerplate.coeNumber}</span></p>
             </div>
 
             <FiCopy className="copy-icon-body" onClick={copyToClipboard}/>

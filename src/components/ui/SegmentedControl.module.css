@@ -28,7 +28,7 @@
 }
 
 .segmentedControlLabel:hover {
-    background: #858383; /* Silver metallic gradient */
+    background: linear-gradient(to bottom, #e5e5e5, #8a8989, #e5e5e5); /* Silver metallic gradient */
 }
 
 .segmentedControlInput:checked + .segmentedControlLabel {

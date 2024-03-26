@@ -115,8 +115,6 @@ const EmailDetails = ({ selectedEmail }) => {
 
                         {selectedEmail.name === "Incident has been escalated" &&
                             <IncidentEscalated clientName={clientName} incidentNumber={incidentNumber} />}
-
-
                     </div>
                 </div>
             )}
