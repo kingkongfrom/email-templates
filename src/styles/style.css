@@ -82,9 +82,9 @@ p {
 
 }
 .email-item {
-    padding: 0 20px;
+    padding: 0 15px;
     display: flex;
-    height: 60px;
+    height: 55px;
     cursor: pointer;
     transition: all 0.02s ease-in-out 0.02s;
 }
@@ -95,11 +95,10 @@ p {
 }
 
 .number {
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 500;
     color: #616365;
     padding-right: 1rem;
-
 }
 
 .details-header {

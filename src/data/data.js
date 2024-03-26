@@ -2,10 +2,12 @@ export const boilerplate = {
     greeting: "Thanks for reaching out our Technical Support Center.",
     csatGreeting: "Hope this email finds you well.",
     tracking: "For Tracking and documentation we have initiated the ticket ",
-    closing: "If you experience any further issues or have additional questions, please do not hesitate to contact us at ",
+    closing: "If you experience any issues or have additional questions, please do not hesitate to contact us at ",
     tscContactNumber: "1-800-854-7201 opt 3.",
     profileMaintenanceNumber: "1-800-525-0689.",
     coeNumber: "844-397-0022",
+    CDIAUsername: "CDIACRRG",
+    CDIAPassword: "Metro2CD!@23",
 };
 
 export const emails = [
@@ -26,6 +28,10 @@ export const emails = [
             {name: "API Info Required", subject: "Information required", type: "TSC"},
             {name: "Issue has been resolved", subject: "Your issue has been resolved", type: "TSC"},
             {name: "Case has been escalated", subject: "Your case has being escalated", type: "CSAT"},
+
+            {name: "CDIA email authentication", subject: "CDIA credentials request", type: "TSC"},
+            {name: "CDIA username & password", subject: "[encrypt] CDIA username & password", type: "TSC"},
+
         ]
     }
 ];

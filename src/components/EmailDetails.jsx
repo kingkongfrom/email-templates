@@ -20,6 +20,8 @@ import InputFields from "./ui/InputFields.jsx";
 import IssueResolved from "./emails/IssueResolved.jsx";
 import CaseEscalated from "./emails/CaseEscalated.jsx";
 import IncidentEscalated from "./coe/IncidentEscalated.jsx";
+import CDIAAuthentication from "./emails/CDIAAuthentication.jsx";
+import CDIAUsernameAndPassword from "./emails/CDIAUsernameAndPassword.jsx";
 
 const EmailDetails = ({ selectedEmail }) => {
     const [clientName, setClientName] = useState("");
@@ -106,13 +108,17 @@ const EmailDetails = ({ selectedEmail }) => {
                         {selectedEmail.name === "Case has been escalated" &&
                             <CaseEscalated  clientName={clientName}
                                            userId={userId} incidentNumber={incidentNumber}/>}
+                        {selectedEmail.name === "CDIA email authentication" &&
+                            <CDIAAuthentication clientName={clientName} caseNumber={caseNumber}/>}
+                        {selectedEmail.name === "CDIA username & password" &&
+                            <CDIAUsernameAndPassword clientName={clientName} caseNumber={caseNumber}/>}
+
 
                         {selectedEmail.name === "Ascend handover" &&
                             <AscendHandover clientName={clientName} incidentNumber={incidentNumber} userId={userId}
                                             contactName={contactName} emailAddress={emailAddress}
                                             phoneNumber={phoneNumber}
                                             shortDescription={shortDescription}/>}
-
                         {selectedEmail.name === "Incident has been escalated" &&
                             <IncidentEscalated clientName={clientName} incidentNumber={incidentNumber} />}
                     </div>
