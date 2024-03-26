@@ -3,21 +3,24 @@ import { emails, coe } from "../data/data";
 import EmailItem from "./EmailItem.jsx";
 import ListHeader from "./ListHeader.jsx";
 
-const EmailList = ({ selectedEmail, setSelectedEmail }) => {
+const EmailList = ({ selectedEmail, setSelectedEmail, setIsToggled }) => {
     const [selectedOption, setSelectedOption] = useState("TSC"); // Initial selected option
 
     const handleOptionChange = (option) => {
         setSelectedOption(option);
         // Set the selected email based on the chosen option
         if (option === "TSC") {
+            setIsToggled(false)
             setSelectedEmail({
-                id: null,
+                id: 1,
                 name: sortedEmails[0], // Select the first email in the TSC list
                 type: "TSC"
             });
         } else if (option === "COE") {
+            setIsToggled(false)
+
             setSelectedEmail({
-                id: null,
+                id: 1,
                 name: sortedCoe[0], // Select the first email in the COE list
                 type: "COE"
             });
@@ -34,13 +37,15 @@ const EmailList = ({ selectedEmail, setSelectedEmail }) => {
 
     const handleEmailItemClick = (id, name, type) => {
         setSelectedEmail({ id, name, type });
+        setIsToggled(false);
     };
 
     let emailItems = null;
 
     if (selectedOption === "TSC") {
         emailItems = sortedEmails.map((name, index) => (
-            <div className={selectedEmail.name === name ? "active" : ""} key={index} onClick={() => handleEmailItemClick(index + 1, name, "TSC")}>
+            <div className={selectedEmail.name === name ? "active" : ""} key={index}
+                 onClick={() => handleEmailItemClick(index + 1, name, "TSC")}>
                 <EmailItem>
                     <div className="container">
                         <p className={`list-text ${selectedEmail.name === name ? "num-active" : "number"}`}>{index < 9 ? `0${index + 1}` : index + 1}
@@ -51,7 +56,8 @@ const EmailList = ({ selectedEmail, setSelectedEmail }) => {
         ));
     } else if (selectedOption === "COE") {
         emailItems = sortedCoe.map((name, index) => (
-            <div className={selectedEmail.name === name ? "active" : ""} key={index} onClick={() => handleEmailItemClick(index + 1, name, "COE")}>
+            <div className={selectedEmail.name === name ? "active" : ""} key={index}
+                 onClick={() => handleEmailItemClick(index + 1, name, "COE")}>
                 <EmailItem>
                     <div className="container">
                         <p className={`list-text ${selectedEmail.name === name ? "num-active" : "number"}`}>{index < 9 ? `0${index + 1}` : index + 1}
@@ -64,7 +70,8 @@ const EmailList = ({ selectedEmail, setSelectedEmail }) => {
 
     return (
         <Fragment>
-            <ListHeader selectedOption={selectedOption} onSelectedOption={handleOptionChange} setSelectedEmail={setSelectedEmail}/>
+            <ListHeader selectedOption={selectedOption} onSelectedOption={handleOptionChange}
+                        setSelectedEmail={setSelectedEmail}/>
             <div className="email-items">{emailItems}</div>
         </Fragment>
     );

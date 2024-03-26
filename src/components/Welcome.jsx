@@ -17,11 +17,7 @@ const Welcome = () => {
 
     return (
         <Fragment>
-                <div style={styles.container}>
-                    <h1 style={styles.heading}>Boilerplate</h1>
-                    <p style={styles.text}></p>
-                    {/*<img src="/images/prototype.png" className="img-prototype" alt="Prototype Image" />*/}
-                </div>
+
             <div style={styles.content}>
                 <div style={styles.copyAndPasteGroup}>
                     <p style={styles.copyAndPasteTitle} className="bold">Account locked</p>
