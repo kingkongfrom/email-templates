@@ -18,20 +18,29 @@ const HsdCreation = ({ clientName, caseNumber }) => {
                 <br/>
                 {caseNumber &&
                     <Fragment>
-                        <p className="tracking">{boilerplate.tracking}<span className="bold">{caseNumber.toUpperCase()}</span>.</p>
+                        <p className="tracking">{boilerplate.tracking}<span
+                            className="bold">{caseNumber.toUpperCase()}</span>.</p>
                         <br/>
                     </Fragment>
                 }
-                <p>Please fill out the Head Security Designate Authorization Form attached.</p>
-                <p>Make sure you select the create option, you can add up to three user IDs as options along with the
-                    contact information for who will be the admin.</p>
-                <p>Also, the signature on this form will need to be signed by the owner, president, manager or someone
+                <p>
+                    Please fill out the Head Security Designate Authorization Form attached.
+                </p>
+                <p>
+                    Make sure you select the create option, you can add up to three user IDs as options along with the
+                    contact information for who will be the admin.
+                </p>
+                <p>
+                    Also, the signature on this form will need to be signed by the owner, president, manager or someone
                     with
-                    a similar title.</p>
+                    a similar title.
+                </p>
                 <br/>
-                <p>Once the admin is created, then that person can create additional users. You can add your Subcode to
+                <p>
+                    Once the admin is created, then that person can create additional users. You can add your Subcode to
                     the
-                    COID field and to the Product requested field.</p>
+                    COID field and to the Product requested field.
+                </p>
                 <br/>
 
 

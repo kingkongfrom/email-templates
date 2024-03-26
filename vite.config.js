@@ -5,6 +5,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     serveStatic: {
+      // Specify MIME types for PDF files
+      mimeTypes: {
+        '.pdf': 'application/pdf',
+      },
       ignore: ['favicon.ico']
     }
   },

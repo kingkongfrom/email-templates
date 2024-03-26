@@ -7,17 +7,7 @@ function SegmentedControl({ selectedOption, onSelectedOption}) {
 
     return (
         <div className={styles.segmentedControl}>
-            <input
-                type="radio"
-                id="coeOption"
-                className={styles.segmentedControlInput}
-                value="COE"
-                checked={selectedOption === "COE"}
-                onChange={() => handleOptionChange("COE")}
-            />
-            <label htmlFor="coeOption" className={styles.segmentedControlLabel}>
-                COE
-            </label>
+
             <input
                 type="radio"
                 id="tscOption"
@@ -28,6 +18,17 @@ function SegmentedControl({ selectedOption, onSelectedOption}) {
             />
             <label htmlFor="tscOption" className={styles.segmentedControlLabel}>
                 TSC
+            </label>
+            <input
+                type="radio"
+                id="coeOption"
+                className={styles.segmentedControlInput}
+                value="COE"
+                checked={selectedOption === "COE"}
+                onChange={() => handleOptionChange("COE")}
+            />
+            <label htmlFor="coeOption" className={styles.segmentedControlLabel}>
+                COE
             </label>
 
         </div>
