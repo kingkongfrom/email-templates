@@ -3,7 +3,8 @@ export const boilerplate = {
     csatGreeting: "Hope this email finds you well.",
     tracking: "For Tracking and documentation we have initiated the ticket ",
     closing: "If you experience any further issues or have additional questions, please do not hesitate to contact us at ",
-    tscContactNumber: "1-800-854-7201 opt 3."
+    tscContactNumber: "1-800-854-7201 opt 3.",
+    profileMaintenanceNumber: "1-800-525-0689."
 };
 
 export const emails = [

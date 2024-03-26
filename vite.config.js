@@ -16,7 +16,7 @@ export default defineConfig({
     rollupOptions: {
       // Ensure that image files are treated as assets
       output: {
-        assetFileNames: '[name].[ext]' // Use placeholders for filename and extension
+        assetFileNames: '[name].[ext]'
       }
     }
   }

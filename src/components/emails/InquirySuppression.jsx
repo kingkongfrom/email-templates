@@ -71,7 +71,7 @@ const InquirySuppression = ({ clientName, caseNumber }) => {
                 </ol>
 
                 <br/>
-                <p>{boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span></p>
+                <p>{boilerplate.closing} <span className="bold">{boilerplate.profileMaintenanceNumber}</span></p>
             </div>
 
             <FiCopy className="copy-icon-body" onClick={copyToClipboard}/>

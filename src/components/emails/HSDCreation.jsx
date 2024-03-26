@@ -1,9 +1,8 @@
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 import { FiCopy } from "react-icons/fi";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
-import subject from "../Subject.jsx";
 import useCapitalize from "../../hooks/useCapitalize.js";
 
 const HsdCreation = ({ clientName, caseNumber }) => {

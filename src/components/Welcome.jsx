@@ -96,6 +96,7 @@ const Welcome = () => {
                             <li>User authenticated</li>
                             <li>User reported "Matching policy not found while trying to process Assertion" error</li>
                             <li>Cookies anc cached cleared form browser</li>
+                            <li>URL removed from favorites</li>
                             <li>"Experian Access" Hyperlink typed manually</li>
                             <li>Issue resolved, access granted</li>
                             <li>no further action needed</li>

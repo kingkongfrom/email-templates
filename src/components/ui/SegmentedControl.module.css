@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to bottom, #e5e5e5, #706f6f); /* Silver metallic gradient */
+    background: linear-gradient(to bottom, #e5e5e5, #706f6f, #e5e5e5); /* Silver metallic gradient */
     border: 1px solid #a9a9a9; /* Darker border */
     overflow: hidden;
     border-radius: 50px;
@@ -32,7 +32,7 @@
 }
 
 .segmentedControlInput:checked + .segmentedControlLabel {
-    background: linear-gradient(to bottom, #173f5b, #9fc0ea); /* Silver metallic gradient */
+    background: linear-gradient(to bottom, #9fc0ea, #173f5b, #9fc0ea); /* Silver metallic gradient */
     color: white; /* Darker text color when selected */
 }
 
