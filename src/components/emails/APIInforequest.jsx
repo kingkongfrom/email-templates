@@ -32,15 +32,15 @@ const APIInfoRequired = ({ clientName, caseNumber, }) => {
                 <p>We need the following information regarding the error and product affected by the incident
                     reported.</p>
                 <ul>
-                    <li>API User ID</li>
+                    <li>API user ID</li>
                     <li>API status:</li>
                     <li>Product name:</li>
-                    <li>API Endpoint:</li>
+                    <li>API endpoint:</li>
                     <li>Environment:</li>
-                    <li>cURL or Call script being used:</li>
-                    <li>Error Timestamp:</li>
+                    <li>cURL or call script being used:</li>
+                    <li>Error timestamp:</li>
                     <li>Transaction ID or Request ID related to the generated error:</li>
-                    <li>Specific Error output:</li>
+                    <li>Specific error output:</li>
                     <li>Percentage of transactions affected:</li>
                 </ul>
                 <p>Please reply to this email with the information requested as soon as possible.</p>
