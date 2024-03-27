@@ -39,7 +39,7 @@ const APIInfoRequired = ({ clientName, caseNumber, }) => {
                     <li>Environment:</li>
                     <li>cURL or call script being used:</li>
                     <li>Error timestamp:</li>
-                    <li>Transaction ID or Request ID related to the generated error:</li>
+                    <li>Transaction ID or request ID related to the generated error:</li>
                     <li>Specific error output:</li>
                     <li>Percentage of transactions affected:</li>
                 </ul>
