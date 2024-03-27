@@ -178,11 +178,12 @@ const styles = {
     },
     copyAndPasteTitle: {
         paddingLeft: "72px",
-        fontSize: "20px",
+        fontSize: "18px",
         color: "#315375"
     },
     row: {
         display: "flex",
+        fontSize: "15px",
         justifyContent: "space-between",
         alignItems: "center",
         padding: "0 50px"
