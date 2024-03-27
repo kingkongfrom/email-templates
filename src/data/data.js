@@ -14,34 +14,113 @@ export const emails = [
     {
         type: "TSC", // Added type property to differentiate COE emails
         name: [
-            {name: "Password reset", subject: "Password reset", type: "TSC"},
-            {name: "Account locked", subject: "Account unlocked", type: "TSC"},
-            {name: "Temporary password", subject: "[encrypt] Temporary password", type: "TSC"},
-            {name: "Account not found", subject: "Account not found", type: "TSC"},
-            {name: "HSD creation", subject: "Head Security Designate request", type: "TSC"},
-            {name: "Inquiry suppression request", subject: "Inquiry suppression request", type: "TSC"},
-            {name: "OKTA URL", subject: "Experian OKTA profile", type: "TSC"},
-            {name: "Origin URL", subject: "Experian admin portal", type: "TSC"},
-            {name: "BIQ env setup", subject: "Business IQ environment setup", type: "TSC"},
-            {name: "UAT API account request", subject: "UAT API account request", type: "TSC"},
-            {name: "SSH Key requirements", subject: "[encrypt] SSH Key requirements", type: "TSC"},
-            {name: "API Info Required", subject: "Information required", type: "TSC"},
-            {name: "Issue has been resolved", subject: "Your issue has been resolved", type: "TSC"},
-            {name: "Case has been escalated", subject: "Your case has being escalated", type: "CSAT"},
+            {
+                name: "Password reset",
+                subject: "Password reset",
+                type: "TSC",
+                favorite: false,
+            },
+            {
+                name: "Account locked",
+                subject: "Account unlocked",
+                type: "TSC",
+                favorite: false,
+            },
+            {
+                name: "Temporary password",
+                subject: "[encrypt] Temporary password",
+                type: "TSC",
+                favorite: false,
+            },
+            {
+                name: "Account not found",
+                subject: "Account not found",
+                type: "TSC",
+                favorite: false,
+            },
+            {
+                name: "HSD creation",
+                subject: "Head Security Designate request",
+                type: "TSC",
+                favorite: false,
+            },
+            {
+                name: "Inquiry suppression request",
+                subject: "Inquiry suppression request",
+                type: "TSC",
+                favorite: false,
+            },
+            {
+                name: "OKTA URL",
+                subject: "Experian OKTA profile",
+                type: "TSC",
+                favorite: false,
+            },
+            {
+                name: "Origin URL",
+                subject: "Experian admin portal",
+                type: "TSC",
+                favorite: false,
+            },
+            {
+                name: "BIQ env setup",
+                subject: "Business IQ environment setup",
+                type: "TSC",
+                favorite: false,
+            },
+            {
+                name: "UAT API account request",
+                subject: "UAT API account request",
+                type: "TSC",
+                favorite: false,
+            },
+            {
+                name: "SSH Key requirements",
+                subject: "[encrypt] SSH Key requirements",
+                type: "TSC",
+                favorite: false,
+            },
+            {
+                name: "API Info Required",
+                subject: "Information required",
+                type: "TSC",
+                favorite: false,
+            },
+            {
+                name: "Issue has been resolved",
+                subject: "Your issue has been resolved",
+                type: "TSC",
+                favorite: false,
+            },
+            {
+                name: "Case has been escalated",
+                subject: "Your case has being escalated",
+                type: "CSAT",
+                favorite: false,
+            },
 
-            {name: "CDIA email authentication", subject: "CDIA credentials request", type: "TSC"},
-            {name: "CDIA username & password", subject: "[encrypt] CDIA username & password", type: "TSC"},
-
-        ]
-    }
+            {
+                name: "CDIA email authentication",
+                subject: "CDIA credentials request",
+                type: "TSC",
+                favorite: false,
+            },
+            {
+                name: "CDIA username & password",
+                subject: "[encrypt] CDIA username & password",
+                type: "TSC",
+                favorite: false,
+            },
+        ],
+    },
 ];
 
 export const coe = [
     {
         type: "COE", // Added type property to differentiate COE emails
         name: [
-            {name: "Ascend handover", subject: "ASCEND SANDBOX", type: "COE"},
-            {name: "Incident has been escalated", subject: "Your incident has been escalated", type: "COE"}
+            {name: "Ascend handover", subject: "ASCEND SANDBOX", type: "COE", favorite: false,},
+            {name: "Incident has been escalated", subject: "Your incident has been escalated", type: "COE", favorite: false,}
         ]
     }
 ];

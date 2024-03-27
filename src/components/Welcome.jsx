@@ -126,7 +126,7 @@ const Welcome = () => {
                         <ul>
                             <li>User authenticated</li>
                             <li>User reported "Access Denied" for product's tab on Experian Access</li>
-                            <li>Product missing "CIS Subcode Profile"</li>
+                            <li>Missing attribute "CIS Subcode Profile"</li>
                             <li>User must reach out HSD for further assistance adding subcode to profile</li>
                             <li>Provided HSD contact information</li>
                             <li>No further action required by the end user</li>

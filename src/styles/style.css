@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+/* General styles */
 body {
     background-color: #efeeee;
     font-family: Arial, sans-serif;
@@ -15,6 +17,8 @@ p {
     line-height: 1.4rem;
 }
 
+
+/* Top components */
 .main {
     margin-top: 50px;
     display: flex;
@@ -33,10 +37,8 @@ p {
     background-color: white;
 }
 
-.template-list {
 
-}
-
+/* template list */
 .list-header {
     position: absolute;
     display: flex;
@@ -57,24 +59,10 @@ p {
     color: transparent;
 }
 
-.body-header {
-    position: absolute;
-    background-color: #315375;
-    height: 70px;
-    width: 800px;
-}
-
-.container {
-    display: flex;
-    width: 100%;
-    align-items: center;
-}
-
 .list-text {
     display: flex;
     gap: 15px;
-    color: #444;
-    font-size: 20px;
+    font-size: 19px;
     padding-left: 10px;
 }
 
@@ -96,11 +84,28 @@ p {
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1)
 }
 
-.number {
-    font-size: 19px;
-    font-weight: 500;
-    color: #616365;
-    padding-right: 1rem;
+.num-active {
+    color: #315375;
+}
+
+.active {
+    background-color: #f0f0f0;
+    border-left: 5px solid #3d648d;
+    box-shadow: 10px 1px 5px rgba(0, 0, 0, 0.1)
+}
+
+/* template details*/
+.body-header {
+    position: absolute;
+    background-color: #315375;
+    height: 70px;
+    width: 800px;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    align-items: center;
 }
 
 .details-header {
@@ -121,10 +126,6 @@ p {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-}
-
-.num-active {
-    color: #315375;
 }
 
 .email-details {
@@ -153,6 +154,30 @@ input[type="text"]:focus {
     box-shadow: 0 0 4px rgba(0, 123, 255, 0.5); /* Apply custom box shadow on focus */
 }
 
+
+.subject-title {
+    padding: 15px 10px;
+    width: 80px;
+    color: white;
+    background-color: #315375;
+    border-radius: 4px 0 0 4px;
+
+}
+
+/* Subject */
+.subject-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 48px;
+    padding: 0 20px;
+    background-color: #ced4da;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Default page*/
+
 .default-text {
     color: #9f1313;
     font-weight: 600;
@@ -171,32 +196,6 @@ li {
     font-weight: bold;
 }
 
-.subject-title {
-    padding: 15px 10px;
-    width: 80px;
-    color: white;
-    background-color: #315375;
-    border-radius: 4px 0 0 4px;
-
-}
-
-.subject-body {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    min-height: 48px;
-    padding: 0 20px;
-    background-color: #ced4da;
-    border-radius: 0 4px 4px 0;
-}
-
-.active {
-    background-color: #f0f0f0; /* Example background color */
-    border-left: 5px solid #3d648d; /* Example border color */
-    box-shadow: 10px 1px 5px rgba(0, 0, 0, 0.1)
-    /* Add any other styles to distinguish the active item */
-}
 
 .url, .mailto {
     color: #4074a8;
@@ -212,13 +211,6 @@ li {
 
 .phone-number-input {
     display: block !important;
-}
-
-.phone-number {
-
-}
-
-.smaller-text {
 }
 
 .temp-password {
@@ -285,12 +277,6 @@ li {
     }
 }
 
-.arrow {
-    position: relative;
-    top: 2px;
-    margin-left: 5px;
-}
-
 .description {
     width: 100%;
     border-top: none;
@@ -308,12 +294,6 @@ li {
 .short-description-input {
     display: block;
     width: 310px !important;
-}
-
-
-.img-prototype {
-    margin-top: 30px;
-    height: 600px;
 }
 
 .copy-icon {
