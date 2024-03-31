@@ -24,6 +24,7 @@ import CDIAAuthentication from "./emails/CDIAAuthentication.jsx";
 import CDIAUsernameAndPassword from "./emails/CDIAUsernameAndPassword.jsx";
 
 const EmailDetails = ({ selectedEmail }) => {
+    console.log("branch v2");
     const [clientName, setClientName] = useState("");
     const [caseNumber, setCaseNumber] = useState("");
     const [tempPassword, setTempPassword] = useState("");
