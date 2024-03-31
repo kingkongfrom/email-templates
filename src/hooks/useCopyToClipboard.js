@@ -1,10 +1,9 @@
 import { useRef } from "react";
 import { Flip } from "react-toastify";
-import useToast from "./useToast.js";
+import showToastMessage from "../utils/showToastMessage.js";
 
 const useCopyToClipboard = () => {
     const jsxContentRef = useRef(null);
-    const toast = useToast();
 
     const copyToClipboard = () => {
         if (jsxContentRef.current) {
@@ -35,7 +34,7 @@ const useCopyToClipboard = () => {
             navigator.clipboard.writeText(jsxContent)
                 .then(() => {
                     console.log("JSX content copied to clipboard successfully");
-                    toast("Copied to clipboard!", {
+                    showToastMessage("Copied to clipboard!", {
                         autoClose: 500,
                         transition: Flip,
 
@@ -43,7 +42,7 @@ const useCopyToClipboard = () => {
                 })
                 .catch((error) => {
                     console.error("Failed to copy JSX content to clipboard:", error);
-                    toast.error("Failed to copy JSX content to clipboard");
+                    showToastMessage.error("Failed to copy JSX content to clipboard");
                 });
         }
     };

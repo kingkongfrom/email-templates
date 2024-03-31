@@ -1,17 +1,16 @@
 import { Fragment } from "react";
 import { FiCopy } from "react-icons/fi";
 import { ToastContainer } from "react-toastify";
-import useCopyFromLanding from "../hooks/useCopyfromLanding.js";
+import copyToClipboardLanding from "../utils/copyToClipboardLanding";
 
 const Welcome = () => {
-    const copyToClipboard = useCopyFromLanding();
     const handleCopy = (index) => {
         const ulElement = document.querySelectorAll("ul")[index];
         if (ulElement) {
             const ulText = Array.from(ulElement.querySelectorAll("li"))
                 .map(li => `• ${li.textContent}`)
                 .join("\n");
-            copyToClipboard(ulText);
+            copyToClipboardLanding(ulText);
         }
     };
 

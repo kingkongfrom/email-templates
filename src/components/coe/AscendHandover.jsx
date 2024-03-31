@@ -2,7 +2,7 @@ import { Fragment, useRef, useEffect } from "react";
 import { FiCopy } from "react-icons/fi";
 import { ToastContainer } from "react-toastify";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard.js";
-import useCapitalize from "../../hooks/useCapitalize.js";
+import capitalize from "../../utils/capitalize.js";
 
 const AscendHandover = ({
                             clientName,
@@ -14,7 +14,6 @@ const AscendHandover = ({
                         }) => {
 
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
-    const capitalize = useCapitalize();
     const textareaRef = useRef("");
 
     // Function to dynamically adjust textarea height based on content

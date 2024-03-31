@@ -3,12 +3,11 @@ import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 import { FiCopy } from "react-icons/fi";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
-import useCapitalize from "../../hooks/useCapitalize.js";
+import capitalize from "../../utils/capitalize.js";
 
 const BiqEnvSetup = ({ caseNumber, hsd, clientName, userId }) => {
     const URL = "https://origin-na.experian.com";
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
-    const capitalize = useCapitalize();
 
     return (
         <Fragment>

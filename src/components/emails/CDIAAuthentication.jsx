@@ -3,11 +3,10 @@ import { Fragment } from "react";
 import { FiCopy } from "react-icons/fi";
 import { ToastContainer } from "react-toastify";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard.js";
-import useCapitalize from "../../hooks/useCapitalize.js";
+import capitalize from "../../utils/capitalize.js";
 
 const CDIAAuthentication = ({ clientName, caseNumber }) => {
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
-    const capitalize = useCapitalize();
 
     return (
         <Fragment>

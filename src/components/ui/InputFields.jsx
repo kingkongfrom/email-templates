@@ -2,62 +2,58 @@ import { useEffect } from "react";
 import { FaSync } from "react-icons/fa";
 
 const InputFields = ({
-                         clientName,
-                         setClientName,
+                         dispatch,
                          selectedEmail,
+                         clientName,
                          caseNumber,
-                         setCaseNumber,
                          hsd,
-                         setHsd,
                          userId,
-                         setUserId,
-                         setTempPassword,
                          tempPassword,
                          incidentNumber,
-                         setIncidentNumber,
                          contactName,
-                         setContactName,
                          companyName,
-                         setCompanyName,
                          emailAddress,
-                         setEmailAddress,
                          phoneNumber,
-                         setPhoneNumber,
                          shortDescription,
-                         setShortDescription,
                      }) => {
+
+    const setInputValue = (setter, value) => {
+        setter(value);
+    };
+
     const inputFields = [
         {
             name: "clientName",
             value: clientName,
-            setter: setClientName,
+            setter: value => setInputValue(dispatch, { type: "setClientName", payload: value }),
             placeholder: "Client's name"
         },
         {
             name: "caseNumber",
             value: caseNumber,
-            setter: setCaseNumber,
+            setter: value => setInputValue(dispatch, { type: "setCaseNumber", payload: value }),
             placeholder: "Case number",
             condition: selectedEmail.name !== "Ascend handover" && selectedEmail.name !== "Case has been escalated" && selectedEmail.name !== "Incident has been escalated"
         },
         {
             name: "tempPassword",
             value: tempPassword,
-            setter: setTempPassword,
+            setter: value => setInputValue(dispatch, { type: "setTempPassword", payload: value }),
+
             placeholder: "Temporary password",
             condition: selectedEmail.name === "Temporary password"
         },
         {
             name: "hsd",
             value: hsd,
-            setter: setHsd,
+            setter: value => setInputValue(dispatch, { type: "setHsd", payload: value }),
             placeholder: "HDS name",
             condition: selectedEmail.name === "BIQ env setup"
         },
         {
             name: "userId",
             value: userId,
-            setter: setUserId,
+            setter: value => setInputValue(dispatch, { type: "setUserId", payload: value }),
             placeholder: "User ID",
             condition: selectedEmail.name === "BIQ env setup"
         },
@@ -65,28 +61,30 @@ const InputFields = ({
         {
             name: "incidentNumber",
             value: incidentNumber,
-            setter: setIncidentNumber,
+            setter: value => setInputValue(dispatch, { type: "setIncidentNumber", payload: value }),
             placeholder: "Incident number",
             condition: selectedEmail.name === "Ascend handover" || selectedEmail.name === "Case has been escalated" || selectedEmail.name === "Incident has been escalated"
         },
         {
             name: "contactName",
             value: contactName,
-            setter: setContactName,
+            setter: value => setInputValue(dispatch, { type: "setContactName", payload: value }),
+
             placeholder: "Contact name",
             condition: selectedEmail.name === "Ascend handover"
         },
         {
             name: "companyName",
             value: companyName,
-            setter: setCompanyName,
+            setter: value => setInputValue(dispatch, { type: "setCompanyName", payload: value }),
+
             placeholder: "Company name",
             condition: selectedEmail.name === "Ascend handover"
         },
         {
             name: "emailAddress",
             value: emailAddress,
-            setter: setEmailAddress,
+            setter: value => setInputValue(dispatch, { type: "setEmailAddress", payload: value }),
             placeholder: "Email address",
             condition: selectedEmail.name === "Ascend handover",
             className: "email-input"
@@ -94,7 +92,7 @@ const InputFields = ({
         {
             name: "phoneNumber",
             value: phoneNumber,
-            setter: setPhoneNumber,
+            setter: value => setInputValue(dispatch, { type: "setPhoneNumber", payload: value }),
             placeholder: "Phone number",
             condition: selectedEmail.name === "Ascend handover",
             className: "phone-number-input"
@@ -102,7 +100,7 @@ const InputFields = ({
         {
             name: "shortDescription",
             value: shortDescription,
-            setter: setShortDescription,
+            setter: value => setInputValue(dispatch, { type: "setShortDescription", payload: value }),
             placeholder: "Short description",
             condition: selectedEmail.name === "Ascend handover",
             className: "short-description-input"

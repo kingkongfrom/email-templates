@@ -3,12 +3,11 @@ import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 import { FiCopy } from "react-icons/fi";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
-import useCapitalize from "../../hooks/useCapitalize.js";
+import capitalize from "../../utils/capitalize.js";
 
 const UATApiRequest = ({ caseNumber, clientName }) => {
     const URL = "https://www.experian.com/consumer-information/net-connect-toolkit-form";
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
-    const capitalize = useCapitalize();
 
     return (
         <Fragment>

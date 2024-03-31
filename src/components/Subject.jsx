@@ -2,7 +2,7 @@ import { FiCopy } from "react-icons/fi";
 import { ToastContainer, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { emails, coe } from "../data/data.js";
-import useToast from "../hooks/useToast.js";
+import useToast from "../utils/showToastMessage.js";
 
 const Subject = ({ caseNumber, selectedEmail, companyName, shortDescription, incidentNumber }) => {
     const toast = useToast();

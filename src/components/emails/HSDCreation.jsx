@@ -3,12 +3,11 @@ import { FiCopy } from "react-icons/fi";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
-import useCapitalize from "../../hooks/useCapitalize.js";
+import capitalize from "../../utils/capitalize.js";
 
-const HsdCreation = ({ clientName, caseNumber }) => {
+const HSDCreation = ({ clientName, caseNumber }) => {
     const eSupport = "esupport@experian.com";
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
-    const capitalize = useCapitalize();
 
     return (
         <Fragment>
@@ -58,4 +57,4 @@ const HsdCreation = ({ clientName, caseNumber }) => {
 
     );
 };
-export default HsdCreation;
+export default HSDCreation;
