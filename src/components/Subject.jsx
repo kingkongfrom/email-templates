@@ -2,10 +2,9 @@ import { FiCopy } from "react-icons/fi";
 import { ToastContainer, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { emails, coe } from "../data/data.js";
-import useToast from "../utils/showToastMessage.js";
+import showToastMessage from "../utils/showToastMessage.js";
 
 const Subject = ({ caseNumber, selectedEmail, companyName, shortDescription, incidentNumber }) => {
-    const toast = useToast();
 
     // Determine the templates array based on the selected email type
     const templates =
@@ -35,7 +34,7 @@ const Subject = ({ caseNumber, selectedEmail, companyName, shortDescription, inc
             .writeText(textToCopy)
             .then(() => {
                 console.log("Subject copied to clipboard");
-                toast("Copied to clipboard!", {
+                showToastMessage("Copied to clipboard!", {
                     autoClose: 500,
                     transition: Flip,
                 });
