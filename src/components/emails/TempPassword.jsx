@@ -34,21 +34,7 @@ const TempPassword = ({ tempPassword, clientName, caseNumber }) => {
                     <li>Lower case character</li>
                     <li>Numeric character</li>
                     <li>Special character</li>
-                    <ul className="circle">
-                        <li>
-                            Not allowed:
-                            <span
-                                className="bold"> &#37; &#94; &amp; &#46; &#42; &apos; &#59; &#123; &#125; &#36; &#43; &#124;
-                                &#41; &#40; &#91; &#93; &lt;,&gt; &#33; &#47;</span>
-                        </li>
-                        <li>
-                            Allowed:
-                            <span className="bold"> # - @ _ :</span>
-                        </li>
-                    </ul>
                 </ul>
-
-
                 <br/>
                 <p>{boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span></p>
             </div>
