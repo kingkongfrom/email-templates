@@ -28,7 +28,7 @@ const CaseEscalated = ({ clientName, caseNumber, incidentNumber }) => {
                 </p>
 
                 <br/>
-                {boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span>
+                <p>{boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span></p>
             </div>
 
             <FiCopy className="copy-icon-body" onClick={copyToClipboard}/>
