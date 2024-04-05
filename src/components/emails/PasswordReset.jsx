@@ -5,6 +5,14 @@ import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 import capitalize from "../../utils/capitalize.js";
 
+/**
+ * Component for rendering an email template for password reset.
+ * @param {Object} props - The props passed to the component.
+ * @param {string} props.clientName - The name of the client.
+ * @param {string} props.caseNumber - The case number associated with the issue.
+ * @returns {JSX.Element} The JSX element representing the email template for password reset.
+ * @author Eduardo da Silva.
+ */
 const PasswordReset = ({ clientName, caseNumber }) => {
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
 

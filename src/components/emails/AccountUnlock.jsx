@@ -5,7 +5,14 @@ import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 import capitalize from "../../utils/capitalize.js";
 
-
+/**
+ * Component for rendering an email template for account unlock notification.
+ * @param {Object} props - The props passed to the component.
+ * @param {string} props.clientName - The name of the client.
+ * @param {string} props.caseNumber - The case number associated with the account unlock.
+ * @returns {JSX.Element} The JSX element representing the account unlock email template.
+ * @author Eduardo da Silva.
+ */
 const AccountUnlock = ({ clientName, caseNumber }) => {
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
 

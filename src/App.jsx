@@ -4,14 +4,28 @@ import Box from "./components/Box.jsx";
 import "./styles/style.css";
 import EmailList from "./components/EmailList.jsx";
 import EmailDetails from "./components/EmailDetails.jsx";
-import Welcome from "./components/Welcome.jsx";
+import Boilerplate from "./components/Boilerplate.jsx";
 import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 
+/**
+ * The main component of the application.
+ * @returns {JSX.Element} The rendered main component.
+ * @author Eduardo da Silva.
+ * @copyright Copyright (c) 2024 Eduardo da Silva.
+ */
 function App() {
+    /**
+     * State for managing the selected email and toggled state.
+     * @type {[{ name: string, subject: string, id: number, type: string }, Function]} selectedEmail - State for selected email.
+     * @type {[boolean, Function]} isToggled - State for toggling email details view.
+     */
     const [selectedEmail, setSelectedEmail] = useState({ name: null, subject: null, id: null, type: null });
     const [isToggled, setIsToggled] = useState(true);
 
-
+    /**
+     * Toggles the email details view.
+     * @returns {void}
+     */
     const handleToggle = () => {
         setIsToggled((toggled) => !toggled);
     };
@@ -32,7 +46,7 @@ function App() {
                         selectedEmail.id &&
                         <EmailDetails selectedEmail={selectedEmail} setSelectedEmail={setSelectedEmail}/>
                         :
-                        <Welcome/>
+                        <Boilerplate/>
                     }
                 </Box>
             </Main>

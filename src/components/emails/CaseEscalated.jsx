@@ -5,6 +5,15 @@ import { ToastContainer } from "react-toastify";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard.js";
 import capitalize from "../../utils/capitalize.js";
 
+/**
+ * Component for rendering an email template for escalated cases.
+ * @param {Object} props - The props passed to the component.
+ * @param {string} props.clientName - The name of the client.
+ * @param {string} props.caseNumber - The case number associated with the escalated case.
+ * @param {string} props.incidentNumber - The incident number associated with the escalated case.
+ * @returns {JSX.Element} The JSX element representing the email template for escalated cases.
+ * @author Eduardo da Silva.
+ */
 const CaseEscalated = ({ clientName, caseNumber, incidentNumber }) => {
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
 

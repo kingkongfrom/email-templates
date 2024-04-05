@@ -1,6 +1,28 @@
 import { useEffect } from "react";
 import { FaSync } from "react-icons/fa";
 
+
+/**
+ * Component for rendering input fields based on the selected email type.
+ * @param {Object} props - The props object.
+ * @param {Function} props.dispatch - The dispatch function.
+ * @param {string} props.selectedEmail - The selected email type.
+ * @param {string} props.clientName - The client's name.
+ * @param {string} props.caseNumber - The case number.
+ * @param {string} props.hsd - The HDS name.
+ * @param {string} props.userId - The user ID.
+ * @param {string} props.tempPassword - The temporary password.
+ * @param {string} props.incidentNumber - The incident number.
+ * @param {string} props.contactName - The contact name.
+ * @param {string} props.companyName - The company name.
+ * @param {string} props.emailAddress - The email address.
+ * @param {string} props.phoneNumber - The phone number.
+ * @param {string} props.shortDescription - The short description.
+ * @returns {JSX.Element} The rendered input fields.
+ * @description This component renders input fields based on the selected email type and manages their state.
+ * @author Eduardo da Silva.
+ *  */
+
 const InputFields = ({
                          dispatch,
                          selectedEmail,
@@ -17,6 +39,13 @@ const InputFields = ({
                          shortDescription,
                      }) => {
 
+    /**
+     * Sets the value of an input field.
+     * @param {Function} setter - The state setter function.
+     * @param {string} value - The value to set.
+     * @returns {void}
+     * @description This function sets the value of an input field using its associated setter function.
+     */
     const setInputValue = (setter, value) => {
         setter(value);
     };
@@ -108,10 +137,21 @@ const InputFields = ({
 
     ];
 
+    /**
+     * Resets all input fields to their default values.
+     * @returns {void}
+     * @description This function resets all input fields to their default values.
+     */
     const resetInput = () => {
         inputFields.forEach(field => field.setter(""));
     };
 
+    /**
+     * Handles changes in input field values.
+     * @param {Object} event - The input change event.
+     * @returns {void}
+     * @description This function handles changes in input field values and updates their corresponding state.
+     */
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         const field = inputFields.find(field => field.name === name);
@@ -120,10 +160,12 @@ const InputFields = ({
         }
     };
 
+    // Effect hook to reset input fields when selected email changes
     useEffect(() => {
         resetInput();
     }, [selectedEmail]);
 
+    // Effect hook to reset input fields on Escape key press
     useEffect(() => {
         const handleEscKey = (e) => {
             if (e.code === "Escape") {

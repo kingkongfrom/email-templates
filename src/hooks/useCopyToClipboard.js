@@ -2,9 +2,17 @@ import { useRef } from "react";
 import { Flip } from "react-toastify";
 import showToastMessage from "../utils/showToastMessage.js";
 
+/**
+ * A custom hook for copying JSX content to the clipboard.
+ * @returns {Array} An array containing a ref to the JSX content and a function to copy the content to the clipboard.
+ * @author Eduardo da Silva.
+ */
 const useCopyToClipboard = () => {
     const jsxContentRef = useRef(null);
 
+    /**
+     * Copies the JSX content to the clipboard.
+     */
     const copyToClipboard = () => {
         if (jsxContentRef.current) {
             const jsxContent = Array.from(jsxContentRef.current.childNodes)
@@ -37,7 +45,6 @@ const useCopyToClipboard = () => {
                     showToastMessage("Copied to clipboard!", {
                         autoClose: 500,
                         transition: Flip,
-
                     });
                 })
                 .catch((error) => {
@@ -47,6 +54,14 @@ const useCopyToClipboard = () => {
         }
     };
 
+    /**
+     * Extracts the content from nested lists.
+     * @param {HTMLElement} listNode - The parent list node.
+     * @param {number} index - The starting index for numbered lists.
+     * @param {number} depth - The depth of the list.
+     * @returns {string} The extracted list content.
+     * @author Eduardo da Silva.
+     */
     const extractListContent = (listNode, index, depth) => {
         let listItems = '';
         Array.from(listNode.childNodes).forEach((childNode) => {
@@ -62,6 +77,13 @@ const useCopyToClipboard = () => {
         return `${listItems}`;
     };
 
+    /**
+     * Determines the bullet point for a list item based on the list type.
+     * @param {string} listType - The type of list ('UL' for unordered list, 'OL' for ordered list).
+     * @param {number} index - The index of the list item in the ordered list.
+     * @returns {string} The bullet point for the list item.
+     * @author Eduardo da Silva.
+     */
     const getListBulletPoint = (listType, index) => {
         return listType === 'OL' ? `${index}.` : '•';
     };

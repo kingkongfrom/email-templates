@@ -1,3 +1,10 @@
+/**
+ * Capitalizes the first letter of each word in a string and converts the rest of the letters to lowercase.
+ * If the input string is empty or null, it returns the input string as is.
+ * @param {string} str - The input string to capitalize.
+ * @returns {string} The input string with each word capitalized.
+ * @author Eduardo da Silva.
+ */
 function capitalize(str) {
     // Check if the input string is empty or null
     if (!str) return str;

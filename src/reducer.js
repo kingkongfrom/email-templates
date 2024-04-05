@@ -1,3 +1,8 @@
+/**
+ * Initial state for input fields.
+ * @type {Object}
+ *
+ */
 const initialState = {
     clientName: "",
     caseNumber: "",
@@ -12,6 +17,17 @@ const initialState = {
     shortDescription: "",
 };
 
+/**
+ * Reducer function to manage state changes for input fields.
+ * This reducer handles various actions to update specific fields in the state.
+ * @param {Object} state - The current state containing input field values.
+ * @param {Object} action - The action object containing the type and payload.
+ * @param {string} action.type - The type of action to perform.
+ * @param {*} action.payload - The data payload associated with the action.
+ * @returns {Object} The new state after applying the action.
+ * @throws {Error} Throws an error if the action type is not recognized.
+ * @author Eduardo da Silva.
+ */
 const reducer = (state, action) => {
     switch (action.type) {
         case "setClientName":

@@ -5,6 +5,14 @@ import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 import capitalize from "../../utils/capitalize.js";
 
+/**
+ * Component for rendering an email template requesting API information.
+ * @param {Object} props - The props passed to the component.
+ * @param {string} props.clientName - The name of the client.
+ * @param {string} props.caseNumber - The case number associated with the API information request.
+ * @returns {JSX.Element} The JSX element representing the API information request email template.
+ * @author Eduardo da Silva.
+ */
 const APIInfoRequired = ({ clientName, caseNumber, }) => {
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
 

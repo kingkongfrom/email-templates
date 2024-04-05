@@ -21,7 +21,15 @@ import AscendHandover from "./coe/AscendHandover";
 import IncidentEscalated from "./coe/IncidentEscalated";
 import { initialState, reducer } from "../reducer.js";
 
+/**
+ * Component to display email details based on the selected email type.
+ * @param {Object} props - Props object.
+ * @param {Object} props.selectedEmail - Selected email object.
+ * @returns {JSX.Element} - Email details component.
+ * @author Eduardo da Silva.
+ */
 const EmailDetails = ({ selectedEmail }) => {
+    // Destructuring state and dispatch function from useReducer hook
     const [{
         clientName,
         caseNumber,
@@ -58,6 +66,7 @@ const EmailDetails = ({ selectedEmail }) => {
         "Incident has been escalated": IncidentEscalated,
     };
 
+    // Retrieve the component corresponding to the selected email
     const SelectedEmailComponent = emailComponentMap[selectedEmail?.name];
 
     return (
@@ -65,6 +74,7 @@ const EmailDetails = ({ selectedEmail }) => {
             {selectedEmail && (
                 <div>
                     <div className="email-details">
+                        {/* Render input fields component */}
                         <InputFields
                             selectedEmail={selectedEmail}
                             clientName={clientName}
@@ -80,6 +90,7 @@ const EmailDetails = ({ selectedEmail }) => {
                             phoneNumber={phoneNumber}
                             shortDescription={shortDescription}
                         />
+                        {/* Render subject component */}
                         <Subject {...{
                             caseNumber,
                             selectedEmail,
@@ -87,6 +98,7 @@ const EmailDetails = ({ selectedEmail }) => {
                             shortDescription,
                             incidentNumber,
                         }} />
+                        {/* Render selected email component if available */}
                         {SelectedEmailComponent && (
                             <SelectedEmailComponent {...{
                                 clientName,

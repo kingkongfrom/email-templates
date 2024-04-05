@@ -4,13 +4,24 @@ import "react-toastify/dist/ReactToastify.css";
 import { emails, coe } from "../data/data.js";
 import showToastMessage from "../utils/showToastMessage.js";
 
+/**
+ * Subject component representing the subject line of an email.
+ * @param {Object} props - The component props.
+ * @param {string} props.caseNumber - The case number.
+ * @param {Object} props.selectedEmail - The selected email.
+ * @param {string} props.companyName - The company name.
+ * @param {string} props.shortDescription - The short description.
+ * @param {string} props.incidentNumber - The incident number.
+ * @returns {JSX.Element} - The rendered component.
+ * @author Eduardo da Silva.
+ */
 const Subject = ({ caseNumber, selectedEmail, companyName, shortDescription, incidentNumber }) => {
 
     // Determine the templates array based on the selected email type
     const templates =
-        selectedEmail?.type === "COE"
-            ? coe[0].name
-            : emails[0].name;
+        selectedEmail?.type === "COE" // If the selected email type is COE
+            ? coe[0].name // Use COE email templates
+            : emails[0].name; // Otherwise, use TSC email templates
 
     // Find the template object corresponding to the selected email
     const selectedTemplate = templates.find(
@@ -20,6 +31,9 @@ const Subject = ({ caseNumber, selectedEmail, companyName, shortDescription, inc
     // Get the subject from the selected template or default to an empty string
     const subject = selectedTemplate ? selectedTemplate.subject : "";
 
+    /**
+     * Function to copy the subject line to the clipboard.
+     */
     const copyToClipboard = () => {
         let textToCopy;
         if (selectedEmail.type === "COE") {
@@ -34,6 +48,7 @@ const Subject = ({ caseNumber, selectedEmail, companyName, shortDescription, inc
             .writeText(textToCopy)
             .then(() => {
                 console.log("Subject copied to clipboard");
+                // Show toast message indicating successful copy
                 showToastMessage("Copied to clipboard!", {
                     autoClose: 500,
                     transition: Flip,
@@ -44,6 +59,7 @@ const Subject = ({ caseNumber, selectedEmail, companyName, shortDescription, inc
             });
     };
 
+    // Rendering the Subject component
     return (
         <div className="container">
             <div className="subject-title">Subject:</div>
@@ -59,9 +75,9 @@ const Subject = ({ caseNumber, selectedEmail, companyName, shortDescription, inc
                 ) : (
                     <div>{subject} {incidentNumber ? ` | ${incidentNumber.toUpperCase()}` : caseNumber && `| case#${caseNumber.toUpperCase()}`}</div>
                 )}
-                <FiCopy className="copy-icon" onClick={copyToClipboard}/>
+                <FiCopy className="copy-icon" onClick={copyToClipboard}/> {/* Copy icon */}
             </div>
-            <ToastContainer/>
+            <ToastContainer/> {/* Toast container for displaying messages */}
         </div>
     );
 };

@@ -5,6 +5,14 @@ import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 import capitalize from "../../utils/capitalize.js";
 
+/**
+ * Component for rendering an email template for Head Security Designate (HSD) creation.
+ * @param {Object} props - The props passed to the component.
+ * @param {string} props.clientName - The name of the client.
+ * @param {string} props.caseNumber - The case number associated with the request.
+ * @returns {JSX.Element} The JSX element representing the email template for HSD creation.
+ * @author Eduardo da Silva.
+ */
 const HSDCreation = ({ clientName, caseNumber }) => {
     const eSupport = "esupport@experian.com";
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();

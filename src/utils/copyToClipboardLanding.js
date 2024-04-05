@@ -1,6 +1,12 @@
 import { Flip } from "react-toastify";
 import showToastMessage from "./showToastMessage.js";
 
+/**
+ * Copies the provided content to the clipboard using the browser's Clipboard API.
+ * Displays a toast message indicating the success or failure of the copy operation.
+ * @param {string} content - The content to be copied to the clipboard.
+ * @author Eduardo da Silva.
+ */
 const copyToClipboardLanding = (content) => {
     navigator.clipboard.writeText(content)
         .then(() => {

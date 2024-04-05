@@ -5,6 +5,15 @@ import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data";
 import capitalize from "../../utils/capitalize.js";
 
+/**
+ * Component for rendering an email template for providing a temporary password.
+ * @param {Object} props - The props passed to the component.
+ * @param {string} props.tempPassword - The temporary password generated.
+ * @param {string} props.clientName - The name of the client.
+ * @param {string} props.caseNumber - The case number associated with the issue.
+ * @returns {JSX.Element} The JSX element representing the email template for providing a temporary password.
+ * @author Eduardo da Silva.
+ */
 const TempPassword = ({ tempPassword, clientName, caseNumber }) => {
     const resetUrl = "https://experian-nab.okta.com";
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();

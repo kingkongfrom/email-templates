@@ -5,6 +5,16 @@ import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 import capitalize from "../../utils/capitalize.js";
 
+/**
+ * Component for rendering an email template for BIQ environment setup.
+ * @param {Object} props - The props passed to the component.
+ * @param {string} props.caseNumber - The case number associated with the BIQ environment setup.
+ * @param {string} props.hsd - The Head Security Designate involved in the setup.
+ * @param {string} props.clientName - The name of the client.
+ * @param {string} props.userId - The affected user's ID.
+ * @returns {JSX.Element} The JSX element representing the BIQ environment setup email template.
+ * @author Eduardo da Silva.
+ */
 const BiqEnvSetup = ({ caseNumber, hsd, clientName, userId }) => {
     const URL = "https://origin-na.experian.com";
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();

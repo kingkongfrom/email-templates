@@ -5,6 +5,14 @@ import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 import capitalize from "../../utils/capitalize.js";
 
+/**
+ * Component for rendering an email template for requesting an API UAT account.
+ * @param {Object} props - The props passed to the component.
+ * @param {string} props.caseNumber - The case number associated with the issue.
+ * @param {string} props.clientName - The name of the client.
+ * @returns {JSX.Element} The JSX element representing the email template for requesting an API UAT account.
+ * @author Eduardo da Silva.
+ */
 const UATApiRequest = ({ caseNumber, clientName }) => {
     const URL = "https://www.experian.com/consumer-information/net-connect-toolkit-form";
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();

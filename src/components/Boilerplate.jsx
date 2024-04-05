@@ -3,20 +3,31 @@ import { FiCopy } from "react-icons/fi";
 import { ToastContainer } from "react-toastify";
 import copyToClipboardLanding from "../utils/copyToClipboardLanding";
 
-const Welcome = () => {
+/**
+ * Renders predefined common boilerplate.
+ * Allows individual copy & paste for each div
+ * @author Eduardo da Silva.
+ */
+const Boilerplate = () => {
+
+    /**
+     * Handles copying the content of each list to the clipboard.
+     * @param {number} index - The index of the list to copy. (feel free to add as many as needed)
+     */
     const handleCopy = (index) => {
         const ulElement = document.querySelectorAll("ul")[index];
         if (ulElement) {
+            // Get the text content of each <li> element and format it as a bulleted list
             const ulText = Array.from(ulElement.querySelectorAll("li"))
                 .map(li => `• ${li.textContent}`)
                 .join("\n");
+            // Copy the formatted text to the clipboard
             copyToClipboardLanding(ulText);
         }
     };
 
     return (
         <Fragment>
-
             <div style={styles.content}>
                 <div style={styles.copyAndPasteGroup}>
                     <p style={styles.copyAndPasteTitle} className="bold">Account locked</p>
@@ -190,4 +201,4 @@ const styles = {
 
 };
 
-export default Welcome;
+export default Boilerplate;
