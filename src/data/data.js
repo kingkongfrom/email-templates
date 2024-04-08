@@ -8,6 +8,7 @@ export const boilerplate = {
     coeNumber: "844-397-0022",
     CDIAUsername: "CDIACRRG",
     CDIAPassword: "Metro2CD!@23",
+    CISEmailAddress: "csdaclientcare@experian.com"
 };
 
 export const emails = [

@@ -14,7 +14,7 @@ import capitalize from "../../utils/capitalize.js";
  * @author Eduardo da Silva.
  */
 const HSDCreation = ({ clientName, caseNumber }) => {
-    const eSupport = "esupport@experian.com";
+    const eSupport = "csdaclientcare@experian.com";
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
 
     return (
@@ -51,7 +51,7 @@ const HSDCreation = ({ clientName, caseNumber }) => {
                 <br/>
 
 
-                <p> Please reply to <a href={`mailto:${eSupport}`} className="mailto">{eSupport}</a> attaching the form
+                <p> Please reply to <a href={`mailto:${boilerplate.CISEmailAddress}`} className="mailto">{boilerplate.CISEmailAddress}</a> attaching the form
                     once you
                     fill it
                     out.</p>
