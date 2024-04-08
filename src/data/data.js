@@ -95,7 +95,7 @@ export const emails = [
             {
                 name: "Case has been escalated",
                 subject: "Your case has being escalated",
-                type: "CSAT",
+                type: "TSC",
                 favorite: false,
             },
 
