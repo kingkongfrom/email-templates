@@ -2,13 +2,14 @@ export const boilerplate = {
     greeting: "Thanks for reaching out our Technical Support Center.",
     csatGreeting: "Hope this email finds you well.",
     tracking: "For Tracking and documentation we have initiated the ticket ",
-    closing: "If you experience any issues or have additional questions, please do not hesitate to contact us at ",
+    closing: "If you have additional questions, please do not hesitate to contact us at ",
     tscContactNumber: "1-800-854-7201 opt 3.",
     profileMaintenanceNumber: "1-800-525-0689.",
     coeNumber: "844-397-0022",
     CDIAUsername: "CDIACRRG",
     CDIAPassword: "Metro2CD!@23",
-    CISEmailAddress: "csdaclientcare@experian.com"
+    CISEmailAddress: "csdaclientcare@experian.com",
+    CISPhoneNumber: "1-800-831-5614 opt 3, then 3.",
 };
 
 export const emails = [

@@ -14,7 +14,6 @@ import capitalize from "../../utils/capitalize.js";
  * @author Eduardo da Silva.
  */
 const HSDCreation = ({ clientName, caseNumber }) => {
-    const eSupport = "csdaclientcare@experian.com";
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
 
     return (
@@ -56,7 +55,7 @@ const HSDCreation = ({ clientName, caseNumber }) => {
                     fill it
                     out.</p>
                 <br/>
-                <p>{boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span></p>
+                <p>{boilerplate.closing} <span className="bold">{boilerplate.CISPhoneNumber}</span></p>
             </div>
 
             <FiCopy className="copy-icon-body" onClick={copyToClipboard}/>
