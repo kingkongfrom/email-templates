@@ -146,7 +146,7 @@ input[type="text"] {
     border: 1px solid #ccc;
     transition: border-color 0.3s ease-in-out;
     outline: none; /* Remove default focus outline */
-    width: 140px;
+    width: 135px;
 }
 
 input[type="text"]:focus {
