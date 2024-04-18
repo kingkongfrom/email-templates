@@ -12,14 +12,16 @@ import OriginUrl from "./emails/OriginUrl";
 import BIQEnvSetup from "./emails/BIQEnvSetup";
 import UATApiRequest from "./emails/UATApiRequest";
 import SSHKeyRequirements from "./emails/SSHKeyRequirements";
-import APIInfoRequired from "./emails/APIInforequest";
+import APIInfoRequired from "./emails/APIInfoRequest.jsx";
 import IssueResolved from "./emails/IssueResolved";
 import CaseEscalated from "./emails/CaseEscalated";
 import CDIAAuthentication from "./emails/CDIAAuthentication";
 import CDIAUsernameAndPassword from "./emails/CDIAUsernameAndPassword";
 import AscendHandover from "./coe/AscendHandover";
 import IncidentEscalated from "./coe/IncidentEscalated";
-import { initialState, reducer } from "../reducer.js";
+import { initialState, reducer } from "../reducer";
+import NetconnectInfoRequired from "./emails/NetconnectInfoRequired";
+import ARContactInfo from "./emails/ARContactInfo";
 
 /**
  * Component to display email details based on the selected email type.
@@ -42,6 +44,8 @@ const EmailDetails = ({ selectedEmail }) => {
         incidentNumber,
         phoneNumber,
         shortDescription,
+        accountRepName,
+        encryption,
     }, dispatch] = useReducer(reducer, initialState);
 
     // Map the email name to its corresponding component
@@ -64,6 +68,8 @@ const EmailDetails = ({ selectedEmail }) => {
         "CDIA username & password": CDIAUsernameAndPassword,
         "Ascend handover": AscendHandover,
         "Incident has been escalated": IncidentEscalated,
+        "Netconnect info required": NetconnectInfoRequired,
+        "AR contact info": ARContactInfo,
     };
 
     // Retrieve the component corresponding to the selected email
@@ -89,6 +95,8 @@ const EmailDetails = ({ selectedEmail }) => {
                             emailAddress={emailAddress}
                             phoneNumber={phoneNumber}
                             shortDescription={shortDescription}
+                            accountRepName={accountRepName}
+                            encryption={encryption}
                         />
                         {/* Render subject component */}
                         <Subject {...{
@@ -97,6 +105,8 @@ const EmailDetails = ({ selectedEmail }) => {
                             companyName,
                             shortDescription,
                             incidentNumber,
+                            encryption,
+                            dispatch,
                         }} />
                         {/* Render selected email component if available */}
                         {SelectedEmailComponent && (
@@ -111,6 +121,8 @@ const EmailDetails = ({ selectedEmail }) => {
                                 phoneNumber,
                                 shortDescription,
                                 incidentNumber,
+                                accountRepName,
+                                encryption,
                             }} />
                         )}
                     </div>

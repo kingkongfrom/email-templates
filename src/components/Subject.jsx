@@ -1,4 +1,4 @@
-import { FiCopy } from "react-icons/fi";
+import { FiCopy, FiLock } from "react-icons/fi";
 import { ToastContainer, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { emails, coe } from "../data/data.js";
@@ -15,7 +15,15 @@ import showToastMessage from "../utils/showToastMessage.js";
  * @returns {JSX.Element} - The rendered component.
  * @author Eduardo da Silva.
  */
-const Subject = ({ caseNumber, selectedEmail, companyName, shortDescription, incidentNumber }) => {
+const Subject = ({
+                     caseNumber,
+                     selectedEmail,
+                     companyName,
+                     shortDescription,
+                     incidentNumber,
+                     dispatch,
+                     encryption
+                 }) => {
 
     // Determine the templates array based on the selected email type
     const templates =
@@ -39,7 +47,7 @@ const Subject = ({ caseNumber, selectedEmail, companyName, shortDescription, inc
         if (selectedEmail.type === "COE") {
             textToCopy = `${subject} ${companyName && `| ${companyName.toUpperCase()}`} ${shortDescription && `| ${shortDescription.toUpperCase()}`} ${incidentNumber && `| ${incidentNumber.toUpperCase()}`}`;
         } else if (selectedEmail.type === "TSC") {
-            textToCopy = `${subject} ${caseNumber ? `| case#${caseNumber.toUpperCase()}` : ''} ${incidentNumber ? `| ${incidentNumber.toUpperCase()}` : ''}`;
+            textToCopy = `${subject} ${caseNumber ? `| ${caseNumber.toUpperCase()}` : ""} ${incidentNumber ? `| ${incidentNumber.toUpperCase()}` : ""}`;
         } else {
             console.log("If you are seeing this the subject failed to load the correct text");
         }
@@ -59,6 +67,10 @@ const Subject = ({ caseNumber, selectedEmail, companyName, shortDescription, inc
             });
     };
 
+    const handleEncryption = () => {
+        dispatch({ type: "setEncryption" });
+    };
+
     // Rendering the Subject component
     return (
         <div className="container">
@@ -67,16 +79,22 @@ const Subject = ({ caseNumber, selectedEmail, companyName, shortDescription, inc
                 {/* Render different subject line JSX based on email type */}
                 {selectedEmail?.type === "COE" ? (
                     <div>
+                        {encryption && "[encrypt] | "}
                         {subject}
                         {companyName && ` | ${companyName.toUpperCase()}`}
                         {shortDescription && ` | ${shortDescription.toUpperCase()}`}
                         {incidentNumber && ` | ${incidentNumber.toUpperCase()}`}
                     </div>
                 ) : (
-                    <div>{subject} {incidentNumber ? ` | ${incidentNumber.toUpperCase()}` : caseNumber && `| case#${caseNumber.toUpperCase()}`}</div>
+                    <div><span className="encrypted">{encryption && "[encrypt] "}</span> {subject} {incidentNumber ? ` | ${incidentNumber.toUpperCase()}` : caseNumber && `| ${caseNumber.toUpperCase()}`}</div>
                 )}
-                <FiCopy className="copy-icon" onClick={copyToClipboard}/> {/* Copy icon */}
+                <div className="icons">
+                    <FiLock className={encryption ? "encrypted lock-icon" : "lock-icon"} onClick={handleEncryption}/>
+                    <FiCopy className="copy-icon" onClick={copyToClipboard}/>
+                </div>
             </div>
+
+
             <ToastContainer/> {/* Toast container for displaying messages */}
         </div>
     );

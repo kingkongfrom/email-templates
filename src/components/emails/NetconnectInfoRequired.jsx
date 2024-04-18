@@ -1,19 +1,11 @@
+import useCopyToClipboard from "../../hooks/useCopyToClipboard.js";
 import { Fragment } from "react";
-import { FiCopy } from "react-icons/fi";
-import useCopyToClipboard from "../../hooks/useCopyToClipboard";
-import { ToastContainer } from "react-toastify";
-import { boilerplate } from "../../data/data.js";
 import capitalize from "../../utils/capitalize.js";
+import { boilerplate } from "../../data/data.js";
+import { FiCopy } from "react-icons/fi";
+import { ToastContainer } from "react-toastify";
 
-/**
- * Component for rendering an email template requesting API information.
- * @param {Object} props - The props passed to the component.
- * @param {string} props.clientName - The name of the client.
- * @param {string} props.caseNumber - The case number associated with the API information request.
- * @returns {JSX.Element} The JSX element representing the API information request email template.
- * @author Eduardo da Silva.
- */
-const APIInfoRequired = ({ clientName, caseNumber, }) => {
+const NetconnectInfoRequired = ({ clientName, caseNumber, }) => {
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
 
     return (
@@ -36,21 +28,25 @@ const APIInfoRequired = ({ clientName, caseNumber, }) => {
                         <br/>
                     </Fragment>
                 )}
-                <p>We need the following information regarding the error and product affected by the incident
-                    reported.</p>
+                <p>
+                    In order to better understand and troubleshoot the issue reported please provide
+                    us with the following information:
+                </p>
+                <br/>
+                <h4>Netconnect details</h4>
                 <ul>
-                    <li>API user ID</li>
-                    <li>API status:</li>
-                    <li>Product name:</li>
-                    <li>API endpoint:</li>
-                    <li>Environment:</li>
-                    <li>cURL or call script being used:</li>
+                    <li>User id:</li>
+                    <li>Environment: (Production, Demo, UAT)</li>
+                    <li>Endpoint:</li>
+                    <li>Subscriber code:</li>
+                    <li>XML request & response</li>
+                    <li>Inquiry string</li>
                     <li>Error timestamp:</li>
                     <li>Transaction ID or request ID related to the generated error:</li>
                     <li>Specific error output:</li>
                     <li>Percentage of transactions affected:</li>
                 </ul>
-                <p>Please reply to this email with the information requested as soon as possible.</p>
+                <p>Please reply to this email with the information requested as soon as possible in order to speed up the resolution of the issue reported.</p>
                 <br/>
                 <p>{boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span></p>
             </div>
@@ -60,5 +56,4 @@ const APIInfoRequired = ({ clientName, caseNumber, }) => {
     );
 };
 
-
-export default APIInfoRequired;
+export default NetconnectInfoRequired;

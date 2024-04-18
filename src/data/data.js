@@ -30,7 +30,7 @@ export const emails = [
             },
             {
                 name: "Temporary password",
-                subject: "[encrypt] Temporary password",
+                subject: "Temporary password",
                 type: "TSC",
                 favorite: false,
             },
@@ -78,7 +78,7 @@ export const emails = [
             },
             {
                 name: "SSH Key requirements",
-                subject: "[encrypt] SSH Key requirements",
+                subject: "SSH Key requirements",
                 type: "TSC",
                 favorite: false,
             },
@@ -109,7 +109,19 @@ export const emails = [
             },
             {
                 name: "CDIA username & password",
-                subject: "[encrypt] CDIA username & password",
+                subject: "CDIA username & password",
+                type: "TSC",
+                favorite: false,
+            },
+            {
+                name: "Netconnect info required",
+                subject: "Netconnect info required",
+                type: "TSC",
+                favorite: false,
+            },
+            {
+                name: "AR contact info",
+                subject: "Account Representative contact info",
                 type: "TSC",
                 favorite: false,
             },

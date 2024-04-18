@@ -34,7 +34,7 @@ function App() {
         <Fragment>
             <Main>
                 <Box width={400}>
-                    <EmailList selectedEmail={selectedEmail} setSelectedEmail={setSelectedEmail} setIsToggled={setIsToggled}/>
+                    <EmailList selectedEmail={selectedEmail} setSelectedEmail={setSelectedEmail} setIsToggled={setIsToggled} />
                 </Box>
                 <Box width={800}>
                     <div className="details-header">

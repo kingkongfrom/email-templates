@@ -15,6 +15,8 @@ const initialState = {
     incidentNumber: "",
     phoneNumber: "",
     shortDescription: "",
+    accountRepName: "",
+    encryption: false,
 };
 
 /**
@@ -84,6 +86,16 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 shortDescription: action.payload,
+            };
+        case "setAccountRepName":
+            return {
+                ...state,
+                accountRepName: action.payload
+            };
+        case "setEncryption":
+            return {
+                ...state,
+                encryption: !state.encryption,
             };
         default:
             throw new Error("Action not defined");

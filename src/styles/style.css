@@ -111,6 +111,7 @@ p {
 .details-header {
     position: absolute;
     background-color: #315375;
+    border-radius: 4px 4px 0 0;
     height: 70px;
     width: 800px;
     display: flex;
@@ -164,6 +165,7 @@ input[type="text"]:focus {
 
 }
 
+
 /* Subject */
 .subject-body {
     display: flex;
@@ -174,6 +176,7 @@ input[type="text"]:focus {
     padding: 0 20px;
     background-color: #ced4da;
     border-radius: 0 4px 4px 0;
+    font-size: 15px;
 }
 
 /* Default page*/
@@ -218,6 +221,7 @@ li {
 }
 
 .copy-icon {
+    position: relative;
     color: #545151;
     font-size: 25px;
     padding: 0 5px;
@@ -296,14 +300,23 @@ li {
     width: 310px !important;
 }
 
-.copy-icon {
-    font-size: 25px;
+.icons {
+    display: flex;
+    padding: 0 15px;
+    gap: 15px;
+}
+
+.copy-icon, .lock-icon {
+    font-size: 22px;
     color: #444;
 }
 
 .copy-icon:hover {
-    font-size: 27px;
     color: #969696
+}
+
+.lock-icon:hover {
+    color: #b77a4e;
 }
 
 .toggle {
@@ -316,4 +329,7 @@ li {
     border-radius: 50px;
 }
 
+.encrypted {
+    color: #d26416;
+}
 
