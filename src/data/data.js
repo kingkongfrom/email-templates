@@ -5,7 +5,7 @@ export const boilerplate = {
     closing: "If you have additional questions, please do not hesitate to contact us at ",
     tscContactNumber: "1-800-854-7201 opt 3.",
     profileMaintenanceNumber: "1-800-525-0689.",
-    coeNumber: "844-397-0022",
+    coeNumber: "844-397-0022.",
     CDIAUsername: "CDIACRRG",
     CDIAPassword: "Metro2CD!@23",
     CISEmailAddress: "csdaclientcare@experian.com",
