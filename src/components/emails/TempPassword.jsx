@@ -4,6 +4,7 @@ import useCopyToClipboard from "../../hooks/useCopyToClipboard.js";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data";
 import capitalize from "../../utils/capitalize.js";
+import IconComponent from "../ui/IconComponent.jsx";
 
 /**
  * Component for rendering an email template for providing a temporary password.
@@ -47,7 +48,10 @@ const TempPassword = ({ tempPassword, clientName, caseNumber }) => {
                 <br/>
                 <p>{boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span></p>
             </div>
-            <FiCopy className="copy-icon-body" onClick={copyToClipboard}/>
+
+            <span onClick={copyToClipboard}>
+                <IconComponent/>
+            </span>
             <ToastContainer/>
         </Fragment>
     );

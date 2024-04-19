@@ -17,6 +17,10 @@ p {
     line-height: 1.4rem;
 }
 
+li::marker {
+    color: #315375; /* Change the color to red */
+    font-weight: bold;
+}
 
 /* Top components */
 .main {
@@ -176,7 +180,7 @@ input[type="text"]:focus {
     padding: 0 20px;
     background-color: #ced4da;
     border-radius: 0 4px 4px 0;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 /* Default page*/
@@ -244,7 +248,9 @@ li {
     display: flex;
     align-items: center;
     justify-content: end;
+    transition: color 0.3s ease; /* Add transition for color change */
 }
+
 
 .copy-icon-body:hover {
     color: #838586;

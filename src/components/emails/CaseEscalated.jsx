@@ -4,6 +4,7 @@ import { FiCopy } from "react-icons/fi";
 import { ToastContainer } from "react-toastify";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard.js";
 import capitalize from "../../utils/capitalize.js";
+import IconComponent from "../ui/IconComponent.jsx";
 
 /**
  * Component for rendering an email template for escalated cases.
@@ -40,7 +41,9 @@ const CaseEscalated = ({ clientName, caseNumber, incidentNumber }) => {
                 <p>{boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span></p>
             </div>
 
-            <FiCopy className="copy-icon-body" onClick={copyToClipboard}/>
+            <span onClick={copyToClipboard}>
+                <IconComponent/>
+            </span>
             <ToastContainer/>
         </Fragment>
     );

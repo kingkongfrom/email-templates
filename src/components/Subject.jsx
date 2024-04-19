@@ -79,14 +79,16 @@ const Subject = ({
                 {/* Render different subject line JSX based on email type */}
                 {selectedEmail?.type === "COE" ? (
                     <div>
-                        {encryption && "[encrypt] | "}
+                        <span className="encrypted">{encryption && "[encrypt] | "}</span>
                         {subject}
                         {companyName && ` | ${companyName.toUpperCase()}`}
                         {shortDescription && ` | ${shortDescription.toUpperCase()}`}
                         {incidentNumber && ` | ${incidentNumber.toUpperCase()}`}
                     </div>
                 ) : (
-                    <div><span className="encrypted">{encryption && "[encrypt] "}</span> {subject} {incidentNumber ? ` | ${incidentNumber.toUpperCase()}` : caseNumber && `| ${caseNumber.toUpperCase()}`}</div>
+                    <div><span
+                        className="encrypted">{encryption && "[encrypt] "}</span> {subject} {incidentNumber ? ` | ${incidentNumber.toUpperCase()}` : caseNumber && `| ${caseNumber.toUpperCase()}`}
+                    </div>
                 )}
                 <div className="icons">
                     <FiLock className={encryption ? "encrypted lock-icon" : "lock-icon"} onClick={handleEncryption}/>

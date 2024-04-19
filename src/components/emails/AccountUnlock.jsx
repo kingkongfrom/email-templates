@@ -1,9 +1,10 @@
 import { Fragment } from "react";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard";
-import { FiCopy } from "react-icons/fi";
+
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 import capitalize from "../../utils/capitalize.js";
+import IconComponent from "../ui/IconComponent.jsx";
 
 /**
  * Component for rendering an email template for account unlock notification.
@@ -34,8 +35,10 @@ const AccountUnlock = ({ clientName, caseNumber }) => {
                 <br/>
                 <p>{boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span></p>
             </div>
+            <span onClick={copyToClipboard}>
+                <IconComponent className="copy-icon-body"/>
+            </span>
 
-            <FiCopy className="copy-icon-body" onClick={copyToClipboard}/>
             <ToastContainer/>
         </Fragment>
     );

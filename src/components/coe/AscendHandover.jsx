@@ -2,7 +2,8 @@ import { Fragment, useRef, useEffect } from "react";
 import { FiCopy } from "react-icons/fi";
 import { ToastContainer } from "react-toastify";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard.js"; // Custom hook to copy text to clipboard
-import capitalize from "../../utils/capitalize.js"; // Utility function to capitalize strings
+import capitalize from "../../utils/capitalize.js";
+import IconComponent from "../ui/IconComponent.jsx"; // Utility function to capitalize strings
 
 /**
  * AscendHandover component representing the email body for Ascend handover.
@@ -111,15 +112,16 @@ const AscendHandover = ({
                 />
             </div>
             {/* Copy icon for copying content to clipboard */}
-            <FiCopy
-                className="copy-icon-body"
-                onClick={() => {
-                    if (textareaRef.current) {
-                        textareaRef.current.select(); // Select the text inside the textarea
-                        copyToClipboard(); // Call the copyToClipboard function
-                    }
-                }}
-            />
+            <span
+                  onClick={() => {
+                      if (textareaRef.current) {
+                          textareaRef.current.select(); // Select the text inside the textarea
+                          copyToClipboard(); // Call the copyToClipboard function
+                      }
+                  }}>
+                 <IconComponent className="copy-icon-body"/>
+            </span>
+
             {/* Toast container for displaying copy success message */}
             <ToastContainer/>
         </Fragment>

@@ -6,7 +6,6 @@ import ListHeader from "./ListHeader.jsx";
 const EmailList = ({ selectedEmail, setSelectedEmail, setIsToggled }) => {
     const [selectedOption, setSelectedOption] = useState("TSC");
 
-
     const handleOptionChange = (option) => {
         setSelectedOption(option);
         if (option === "TSC") {

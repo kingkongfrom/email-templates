@@ -4,6 +4,7 @@ import capitalize from "../../utils/capitalize.js";
 import { boilerplate } from "../../data/data.js";
 import { FiCopy } from "react-icons/fi";
 import { ToastContainer } from "react-toastify";
+import IconComponent from "../ui/IconComponent.jsx";
 
 const ARContactInfo = ({ clientName, caseNumber, accountRepName, emailAddress }) => {
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
@@ -36,7 +37,9 @@ const ARContactInfo = ({ clientName, caseNumber, accountRepName, emailAddress })
                 <br/>
                 <p>{boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span></p>
             </div>
-            <FiCopy className="copy-icon-body" onClick={copyToClipboard}/>
+            <span onClick={copyToClipboard}>
+                <IconComponent/>
+            </span>
             <ToastContainer/>
         </Fragment>
     );

@@ -5,7 +5,6 @@ import showToastMessage from "../utils/showToastMessage.js";
 /**
  * A custom hook for copying JSX content to the clipboard.
  * @returns {Array} An array containing a ref to the JSX content and a function to copy the content to the clipboard.
- * @author Eduardo da Silva.
  */
 const useCopyToClipboard = () => {
     const jsxContentRef = useRef(null);

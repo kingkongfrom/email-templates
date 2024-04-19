@@ -4,6 +4,7 @@ import { FiCopy } from "react-icons/fi";
 import { ToastContainer } from "react-toastify";
 import { boilerplate } from "../../data/data.js";
 import capitalize from "../../utils/capitalize.js";
+import IconComponent from "../ui/IconComponent.jsx";
 
 /**
  * Component for rendering an email template for inquiry suppression requests.
@@ -81,7 +82,9 @@ const InquirySuppression = ({ clientName, caseNumber }) => {
                 <p>{boilerplate.closing} <span className="bold">{boilerplate.profileMaintenanceNumber}</span></p>
             </div>
 
-            <FiCopy className="copy-icon-body" onClick={copyToClipboard}/>
+            <span onClick={copyToClipboard}>
+                <IconComponent/>
+            </span>
             <ToastContainer/>
         </Fragment>
 
