@@ -34,7 +34,7 @@ const CDIAUsernameAndPassword = ({ clientName, caseNumber }) => {
 <p>Please find below the username and password for the Metro2 Format.</p>
                 <ul>
                     <li>Username: <span className="bold">{boilerplate.CDIAUsername}</span> (All upper case)</li>
-                    <li>Password: <span className="bold">{boilerplate.CDIAPassword}</span> (Case sencitive)</li>
+                    <li>Password: <span className="bold">{boilerplate.CDIAPassword}</span> (Case sensitive)</li>
 
                 </ul>
                 <br/>
