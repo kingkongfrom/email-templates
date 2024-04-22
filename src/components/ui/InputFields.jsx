@@ -37,7 +37,7 @@ const InputFields = ({
                          emailAddress,
                          phoneNumber,
                          shortDescription,
-                         accountRepName,
+                         hsdName,
                      }) => {
 
     /**
@@ -112,18 +112,18 @@ const InputFields = ({
             condition: selectedEmail.name === "Ascend handover"
         },
         {
-            name: "accountRepName",
-            value: accountRepName,
-            setter: value => setInputValue(dispatch, { type: "setAccountRepName", payload: value }),
-            placeholder: "Account Rep Name",
-            condition: selectedEmail.name === "AR contact info",
+            name: "HSDContactInfo",
+            value: hsdName,
+            setter: value => setInputValue(dispatch, { type: "setHsdName", payload: value }),
+            placeholder: "HSD Name",
+            condition: selectedEmail.name === "HSD contact info",
         },
         {
             name: "emailAddress",
             value: emailAddress,
             setter: value => setInputValue(dispatch, { type: "setEmailAddress", payload: value }),
             placeholder: "Email address",
-            condition: selectedEmail.name === "Ascend handover" || selectedEmail.name === "AR contact info",
+            condition: selectedEmail.name === "Ascend handover" || selectedEmail.name === "HSD contact info",
             className: "email-input"
         },
         {

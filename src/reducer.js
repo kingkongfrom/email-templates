@@ -15,7 +15,7 @@ const initialState = {
     incidentNumber: "",
     phoneNumber: "",
     shortDescription: "",
-    accountRepName: "",
+    hsdName: "",
     encryption: false,
 };
 
@@ -87,10 +87,10 @@ const reducer = (state, action) => {
                 ...state,
                 shortDescription: action.payload,
             };
-        case "setAccountRepName":
+        case "setHsdName":
             return {
                 ...state,
-                accountRepName: action.payload
+                hsdName: action.payload
             };
         case "setEncryption":
             return {

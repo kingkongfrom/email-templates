@@ -2,11 +2,10 @@ import useCopyToClipboard from "../../hooks/useCopyToClipboard.js";
 import { Fragment } from "react";
 import capitalize from "../../utils/capitalize.js";
 import { boilerplate } from "../../data/data.js";
-import { FiCopy } from "react-icons/fi";
 import { ToastContainer } from "react-toastify";
 import IconComponent from "../ui/IconComponent.jsx";
 
-const ARContactInfo = ({ clientName, caseNumber, accountRepName, emailAddress }) => {
+const HSDContactInfo = ({ clientName, caseNumber, hsdName, emailAddress }) => {
     const [jsxContentRef, copyToClipboard] = useCopyToClipboard();
 
     return (
@@ -29,10 +28,10 @@ const ARContactInfo = ({ clientName, caseNumber, accountRepName, emailAddress })
                         <br/>
                     </Fragment>
                 )}
-                <p>Please reach out to your Experian Account Representative for further assistance.</p>
+                <p>Please reach out to your Head Security Designate for further assistance.</p>
                 <br/>
-                <h4>Account rep contact info:</h4>
-                <p>Name: <span className="bold">{accountRepName}</span></p>
+                <h4>Head Security Designate contact info:</h4>
+                <p>Name: <span className="bold">{hsdName}</span></p>
                 <p>Email address: <span className="bold">{emailAddress}</span></p>
                 <br/>
                 <p>{boilerplate.closing} <span className="bold">{boilerplate.tscContactNumber}</span></p>
@@ -44,4 +43,4 @@ const ARContactInfo = ({ clientName, caseNumber, accountRepName, emailAddress })
         </Fragment>
     );
 };
-export default ARContactInfo;
+export default HSDContactInfo;

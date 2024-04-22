@@ -120,8 +120,8 @@ export const emails = [
                 favorite: false,
             },
             {
-                name: "AR contact info",
-                subject: "Account Representative contact info",
+                name: "HSD contact info",
+                subject: "Head Security Designate contact info",
                 type: "TSC",
                 favorite: false,
             },

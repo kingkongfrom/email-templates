@@ -21,7 +21,7 @@ import AscendHandover from "./coe/AscendHandover";
 import IncidentEscalated from "./coe/IncidentEscalated";
 import { initialState, reducer } from "../reducer";
 import NetconnectInfoRequired from "./emails/NetconnectInfoRequired";
-import ARContactInfo from "./emails/ARContactInfo";
+import HSDContactInfo from "./emails/HSDContactInfo.jsx";
 
 /**
  * Component to display email details based on the selected email type.
@@ -44,7 +44,7 @@ const EmailDetails = ({ selectedEmail }) => {
         incidentNumber,
         phoneNumber,
         shortDescription,
-        accountRepName,
+        hsdName,
         encryption,
     }, dispatch] = useReducer(reducer, initialState);
 
@@ -69,7 +69,7 @@ const EmailDetails = ({ selectedEmail }) => {
         "Ascend handover": AscendHandover,
         "Incident has been escalated": IncidentEscalated,
         "Netconnect info required": NetconnectInfoRequired,
-        "AR contact info": ARContactInfo,
+        "HSD contact info": HSDContactInfo,
     };
 
     // Retrieve the component corresponding to the selected email
@@ -95,7 +95,7 @@ const EmailDetails = ({ selectedEmail }) => {
                             emailAddress={emailAddress}
                             phoneNumber={phoneNumber}
                             shortDescription={shortDescription}
-                            accountRepName={accountRepName}
+                            hsdName={hsdName}
                             encryption={encryption}
                         />
                         {/* Render subject component */}
@@ -121,7 +121,7 @@ const EmailDetails = ({ selectedEmail }) => {
                                 phoneNumber,
                                 shortDescription,
                                 incidentNumber,
-                                accountRepName,
+                                hsdName,
                                 encryption,
                             }} />
                         )}
