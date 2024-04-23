@@ -45,9 +45,9 @@ const Subject = ({
     const copyToClipboard = () => {
         let textToCopy;
         if (selectedEmail.type === "COE") {
-            textToCopy = `${encryption && "[encrypt] | "} ${subject} ${companyName && `| ${companyName.toUpperCase()}`} ${shortDescription && `| ${shortDescription.toUpperCase()}`} ${incidentNumber && `| ${incidentNumber.toUpperCase()}`}`;
+            textToCopy = `${encryption ? "[encrypt] | " : ""} ${subject} ${companyName && `| ${companyName.toUpperCase()}`} ${shortDescription && `| ${shortDescription.toUpperCase()}`} ${incidentNumber && `| ${incidentNumber.toUpperCase()}`}`;
         } else if (selectedEmail.type === "TSC") {
-            textToCopy = `${encryption && "[encrypt] | "} ${subject} ${caseNumber ? `| ${caseNumber.toUpperCase()}` : ""} ${incidentNumber ? `| ${incidentNumber.toUpperCase()}` : ""}`;
+            textToCopy = `${encryption ? "[encrypt] | " : ""} ${subject} ${caseNumber ? `| ${caseNumber.toUpperCase()}` : ""} ${incidentNumber ? `| ${incidentNumber.toUpperCase()}` : ""}`;
         } else {
             console.log("If you are seeing this the subject failed to load the correct text");
         }
