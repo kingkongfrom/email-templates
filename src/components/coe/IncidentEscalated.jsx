@@ -20,7 +20,7 @@ const IncidentEscalated = ({ clientName, incidentNumber }) => {
     return (
         <Fragment>
             <div ref={jsxContentRef} className="email-body">
-                <p>Dear {clientName === "" ? "Client," : `${capitalize(clientName)},`}</p>
+                <p>Hi {clientName === "" ? "Client," : `${capitalize(clientName)},`}</p>
                 <br/>
                 <p>
                     Your case has been escalated to one of our specialized teams for further assistance under

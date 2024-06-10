@@ -21,7 +21,7 @@ const CaseEscalated = ({ clientName, caseNumber, incidentNumber }) => {
     return (
         <Fragment>
             <div ref={jsxContentRef} className="email-body">
-                <p>Dear {clientName === "" ? "Client," : `${capitalize(clientName)},`}</p>
+                <p>Hi {clientName === "" ? "Client," : `${capitalize(clientName)},`}</p>
                 <p>{boilerplate.csatGreeting}</p>
                 <br/>
                 {caseNumber &&

@@ -21,7 +21,7 @@ const APIInfoRequired = ({ clientName, caseNumber }) => {
         <Fragment>
             <div ref={jsxContentRef} className="email-body">
                 <p>
-                    Dear{" "}
+                    Hi{" "}
                     {clientName === ""
                         ? "Client,"
                         : `${capitalize(clientName)},`}

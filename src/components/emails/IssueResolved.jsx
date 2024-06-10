@@ -20,7 +20,7 @@ const IssueResolved = ({ clientName, caseNumber }) => {
     return (
         <Fragment>
             <div ref={jsxContentRef} className="email-body">
-                <p>Dear {clientName === "" ? "Client," : `${capitalize(clientName)},`}</p>
+                <p>Hi {clientName === "" ? "Client," : `${capitalize(clientName)},`}</p>
                 <p>Hope this email finds you well.</p>
                 <br/>
                 <p>

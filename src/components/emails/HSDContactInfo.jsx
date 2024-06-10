@@ -12,7 +12,7 @@ const HSDContactInfo = ({ clientName, caseNumber, hsdName, emailAddress }) => {
         <Fragment>
             <div ref={jsxContentRef} className="email-body">
                 <p>
-                    Dear{" "}
+                    Hi{" "}
                     {clientName === ""
                         ? "Client,"
                         : `${capitalize(clientName)},`}
